@@ -1,0 +1,27 @@
+<div id="divForms" class="divForms">
+    <div style="display: block" id="div_welcome" class="welcome">
+        <h3>Seleccione que tipo de tareas quieres enviar</h3>
+    </div>
+    <div style="display: none;"  id="div_Type_File" class="div_Type_File">
+        <form action="/create_task/<%=groupe.id%>" method="post" enctype="multipart/form-data">
+            <label for="archivo">Subir archivo</label>
+            <input type="file" name="file" class="file_archivo" id="" multiple>
+            <textarea name="descripcion_type_file" id="" cols="30" placeholder="Instrucciones" rows="10"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div style="display:none" id="div_type_Texto" class="div_type_Texto">
+        <form action="" method="post">
+            <textarea name="descripcion_type_texto" id="" cols="30" rows="10"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div style="display:none" id="div_type_image" class="div_type_image">
+        <form action="/create_task/<%=groupe.id%>" method="post" enctype="multipart/form-data">
+            <label for="imagen">Subir imagen</label>
+            <input type="file" name="file" class="file_img" id="" multiple>
+            <textarea name="descripcion_type_image" id="" placeholder="Instrucciones" cols="30" rows="10"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>

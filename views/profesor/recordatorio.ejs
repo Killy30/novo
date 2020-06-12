@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorio</title>
+    <link rel="stylesheet" href="../../css/profesor/recordatorio.css">
+</head>
+<body>
+    <% include header_p%>
+
+    <div class="container" id="container" data-id="<%=user.id%>">
+        <div class="box">
+            <a href="" id="btnCrear" class="crear" style="display: flex">
+                <div class="mas">
+                    <h3 class="mx">+</h3>
+                </div>
+                <p class="c_p">
+                    Crear nuevo Recordatorio
+                </p>
+            </a>
+            <div id="box_form" class="box_form" style="display: none">
+                <a href="" id="btnCrear_m" class="crear" style="display: flex">
+                    <div class="mas">
+                        <h3 class="menos">-</h3>
+                    </div>
+                    <p class="c_p">
+                        Crear nuevo Recordatorio
+                    </p>
+                </a>
+                <form id="form" action="" method="post">
+                    <input type="text" placeholder="Titulo" name="titulo" id="titulo">
+                    <textarea name="descripcion" placeholder="Descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                    <div class="d_b">
+                        <input type="datetime-local" name="timeA" id="date">
+                        <button id="btn" type="submit">Crear</button>
+                    </div>
+                </form>
+            </div>
+           
+            <div id="futureAlamr" class="futureAlamr"></div>
+            
+        </div>
+        
+    </div>
+    <div class="box_past">
+        <div class="tx_past">
+            <h3>Pasadas</h3>
+        </div>
+        <div id="passAlamr" class="passAlamr"></div>
+    </div>
+
+    <script src="../../js/recordatorio.js"></script>
+</body>
+</html>

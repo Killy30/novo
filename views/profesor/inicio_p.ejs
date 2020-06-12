@@ -1,0 +1,43 @@
+<head>
+    <link rel="stylesheet" href="../../css/profesor/inicio_p.css">
+</head>
+
+<% include header_p%>
+
+<div class="box_config">
+    <%include box_config%>
+</div>
+
+<div class="container">
+
+    <div class="list_goupes">
+        <div class="headerF">
+            <h2>EL FUTURO ES HOY</h2>
+            <img src="../../img/header_img.jpg" alt="">
+        </div>
+        <div class="list">
+            <%include list_groupe%>
+        </div>
+    </div>
+</div>
+<div class="containe_two">
+    <div class="box_recordatorio">
+        <div class="titule_r">
+            Recordatorios
+        </div>
+        <div id="body_recor" class="body_recor">
+
+        </div>
+        <div class="footer_recor">
+            <a href="/recordatorio/<%=user.id%>">Listas</a>
+        </div>
+    </div>
+    <div class="calendario">
+
+    </div>
+    <div class="list_notas">
+
+    </div>
+</div>
+
+<script src="../../js/inicio_p.js"></script>

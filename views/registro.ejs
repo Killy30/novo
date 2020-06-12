@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo_a">
+            <div class="box_logo">
+                <img src="../../img/logos.png" alt="">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/iniciar_sesion">Iniciar sesion</a>
+                </li>
+                <li>
+                    <a href="/registro">Registrate</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="box_form">
+            <div class="titulo">
+                <h2>Registrar</h2>
+            </div>
+            <% if(registroMessage != ''){ %>
+                <div class="message_err">
+                    <%=registroMessage%>
+                </div>
+            <%}%>
+            <div class="form">
+                <form action="/registro" method="post">
+                    <div class="form_g">
+                        <input type="text" placeholder="Nombre" name="name" id="" required>
+                        <input type="text" placeholder="Apellido" name="lastName" id="" required>
+                        <input type="text" placeholder="Email" name="email" id="" required>
+                        <input type="password" placeholder="Contraseña" name="password" id="" required>
+                        <input type="password" placeholder="Confirmar contraseña" name="" id="validarPassword" required>
+                    </div>
+                    <div class="radio">
+                        <label for="">Profesor</label>
+                        <input type="radio" name="category" value="teacher" required>
+                        <p></p>
+                        <label for="">Estudiante</label>
+                        <input type="radio" name="category" value="student" required>
+                    </div>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+            <p>Ya tienes una cuenta? <a href="/iniciar_sesion">_Iniciar sesion</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/profesor/create_groupe.css">
+</head>
+<body>
+    <%include header_p%>    
+    
+    <div class="container">
+        <div class="create_groupe">
+            <h2>crear grupo</h2>
+            <form action="/create_groupe" method="post">
+                <div class="name">
+
+                    <input type="text" placeholder="Nombre del grupo o materia" autocomplete="off" name="name" id="">
+                </div>
+                <div class="nivel">
+
+                    <input type="text" placeholder="Nivel" autocomplete="off" name="nivel" id="">
+                </div>
+                <div class="description">
+
+                    <input type="text" placeholder="Descripcion" autocomplete="off" name="description" id="">
+                </div>
+                <div class="color">
+
+                    <input type="color"  name="color" id="">
+                </div>
+                <button type="submit">Crear grupo</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>

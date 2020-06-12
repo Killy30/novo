@@ -1,0 +1,45 @@
+
+.a_groupe{
+    width: 49%;
+    height: 250px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.groupe{
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;      
+    background-color: rgb(98, 0, 255);                                                                                                                   
+}
+.box_element{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.name_groupe{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.name_groupe p{
+    padding-right: 10px;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 2em;
+}
+.description{
+    width: 95%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.description p{
+    font-family: sans-serif;
+    font-size: 1em;
+    margin: 0;
+}

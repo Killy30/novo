@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/profesor/createTask.css">
+</head>
+<body>
+    <%include header_p%>
+
+    <div class="contenair">
+        <div class="box">
+            <div class="box_body">
+                <%include taskElement%>
+            </div>
+            <div id="box_element" class="box_element">
+                <div class="type">
+                    <strong><p>Tipo de tareas</p></strong>
+                </div>
+                <a class="archivo" id="archivo" href="">Archivo</a>
+                <a class="texto" id="texto" href="">Texto</a>
+                <a class="image" id="image" href="">Imagen</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/createTask.js"></script>
+</body>
+</html>

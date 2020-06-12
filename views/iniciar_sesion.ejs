@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/iniciar_sesion.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo_a">
+            <div class="box_logo">
+                <img src="../../img/logos.png" alt="">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/iniciar_sesion">Iniciar sesion</a>
+                </li>
+                <li>
+                    <a href="/registro">Registrate</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="box_form">
+            <div class="titulo">
+                <h2>Iniciar sesion</h2>
+            </div>
+            <% if(iniciarMessage != ''){ %>
+                <div class="message_err">
+                    <%=iniciarMessage%>
+                </div>
+            <%}%>
+            <div class="form">
+                <form action="/iniciar_sesion" method="post">
+                    <input type="text" name="email" id="">
+                    <input type="password" name="password" id="">
+                    <button type="submit">Iniciar sesion</button>
+                </form>
+            </div>
+            <p>No tienes una cuenta aun? <a href="/registro">_Registrate aqui</a></p>
+        </div>
+    </div>
+    
+</body>
+</html>

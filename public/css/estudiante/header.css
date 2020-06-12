@@ -1,0 +1,20 @@
+header{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(64, 2, 207);
+    border-bottom: 1px solid #fff;
+    display: flex;
+}
+nav ul{
+    display: flex;
+    
+}
+ul li{
+    list-style: none;
+    padding: 10px;
+
+}
+li a{
+    color: #fff;
+    text-decoration: none;
+}

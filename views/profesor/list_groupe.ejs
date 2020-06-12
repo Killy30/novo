@@ -1,0 +1,20 @@
+<head>
+    <link rel="stylesheet" href="../../css/profesor/list_group.css">
+</head>
+
+<%groupe.groupes.forEach(groupe =>{%>
+    <a class="a_groupe" href="/groupe/<%=groupe.name%>">
+        <div class="groupe" >
+            <div class="box_element">
+                <div class="name_groupe">
+                    <p><%=groupe.name%></p><p><%=groupe.nivel%></p>
+                </div>
+                <div class="description">
+                    <p><%=groupe.description%></p>
+                </div>
+            </div>
+            
+        </div>
+    </a>
+<%})%>
+

@@ -1,0 +1,129 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+header{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    border-bottom: 1px solid rgb(167, 167, 167);
+    background-color: rgb(29, 29, 29);
+    position: fixed;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.box_logo{
+    width: 130px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+.box_logo img{
+    width: 100%;
+}
+header nav ul{
+    display: flex;
+    margin: 0;
+}
+nav ul li{
+    list-style: none;
+    padding: 10px;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+}
+ul li a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+.container{
+    width: 100%;
+    height:1000px ;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+.container img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.box_logo_c{
+    width: 25%;
+    position: absolute;
+    margin-top: 100px;
+}
+.info{
+    width: 90%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 250px;
+
+}
+.th{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.titulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+.titulo h1{
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    font-size: 80px;
+
+}
+.titulo_d{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+.titulo_d h2{
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    margin: 0;
+    font-weight: unset;
+    text-align: center;
+}
+.descripcion{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+.descripcion p{
+    width: 70%;
+    font-family: sans-serif;
+    color: #FFE119;
+    font-size: 2em;
+    margin: 0;
+    font-weight: unset;
+    
+}
+
+footer{
+    width: 100%;
+    height: 120px;
+    background-color: rgb(44, 43, 43);
+    display: flex;
+    align-self: flex-end;
+}
