@@ -1,7 +1,21 @@
 const body_alarm = document.getElementById('body_recor')
+const btn_open = document.getElementById('btn_open')
+const btn_cancel = document.getElementById('btn_cancel')
 
 document.addEventListener('DOMContentLoaded', () => {
+    const height_value = innerHeight;
+    document.querySelector('.box_config').style.height = height_value + 'px';
     data.getData()
+})
+
+btn_open.addEventListener('click', (e)=>{
+    e.preventDefault()
+    document.querySelector('.overlay').classList.add('active')
+})
+
+btn_cancel.addEventListener('click', (e)=>{
+    e.preventDefault()
+    document.querySelector('.overlay').classList.remove('active')
 })
 
 class Data {

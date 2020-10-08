@@ -1,0 +1,28 @@
+<div class="overlay">
+    <div class="ventana_flotante">
+        <div class="card">
+            <div class="card-header">
+                <h2>crear grupo/materia</h2>
+            </div>
+            <form class="form-groupe card-body" action="/create_groupe" method="post">
+                <div class="form-groupe">
+                    <label for="name">Nombre</label>
+                    <input class="form-control" type="text" required placeholder="Nombre del grupo o materia, requerida" autocomplete="off" name="name" id="">
+                </div>
+                <div class="form-groupe">
+                    <label for="nivel">Nivel</label>
+                    <input class="form-control" type="text" placeholder="Nivel" autocomplete="off" name="nivel" id="">
+                </div>
+                <div class="form-groupe">
+                    <label for="description">Descripcion</label>
+                    <textarea class="form-control" type="text" required placeholder="Descripcion, requerida" autocomplete="off" name="description" id=""></textarea>
+                </div>
+                <div class="form-groupe mt-5">
+                    <button class="btn btn-outline-dark" id="btn_cancel">Cancelar</button>
+                    <button class="btn btn-primary" type="submit">Crear grupo</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

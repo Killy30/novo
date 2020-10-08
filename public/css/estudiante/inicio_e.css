@@ -1,7 +1,3 @@
-body{
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .containe{
     width: 60%;
@@ -27,7 +23,7 @@ body{
     justify-content: center;
     border-radius: 7px;
 }
-/* .headerF img{
+.headerF img{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,7 +33,7 @@ body{
     font-family: sans-serif;
     color: #fff;
     font-size: 4em;
-} */
+}
 .list{
     width: 100%;
     margin-top: 15px;
@@ -46,70 +42,6 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     border-top: 2px solid #ddd;
-}
-
-
-.containe_two{
-    width: 260px;
-    background-color: #eeeeee;
-    border-radius: 3px;
-    position: fixed;
-    margin-left: 60%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    top: 80px;
-    left: 250px;
-}
-.box_recordatorio{
-    width: 100%;
-    height: 280px;
-    border-radius: 3px;
-    padding: 7px;
-}
-.titule_r{
-    width: 100%;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(223, 108, 1);
-    font-family: sans-serif;
-    font-weight: bolder;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    border-bottom: 1px solid #fff;
-}
-.body_recor{
-    width: 100%;
-    height: 130px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.box_alamr_past{
-    width: 95%;
-    display: flex;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-
-}
-.footer_recor{
-    width: 100%;
-    height: 35px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.footer_recor a{
-    color: rgb(223, 108, 1);
-    text-decoration: none;
-    font-family:sans-serif;
-}
-.footer_recor a:hover{
-    border-bottom: 1px solid rgb(223, 108, 1);
 }
 
 
@@ -175,31 +107,4 @@ body{
 }
 .config p a:hover{
     color: rgb(0, 52, 110);
-}
-
-/* overlay */
-.overlay{
-    background-color: rgba(0, 0, 0, .3);
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-}
-.active{
-    visibility: visible;
-}
-.ventana_flotante{
-    background-color: #fafaff;
-    padding: 15px;
-    border-radius: 5px;
-    width: 600px;
-}
-.card{
-    width: 100%;
-    height: 100%;
 }

@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container{
+    width: 70%;
+    margin-top: 60px;
+    font-family: sans-serif;
+}
+.header_profile{
+    width: 100%;
+    height: 350px;
+    border-bottom: 2px solid #051228;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img_profile{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+}
+.img_profile img{
+    width: 100%;
+}
+
+
+
+.body_profile{
+    width: 100%;
+    padding-top: 20px;
+}
+.list_groupe{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box_list{
+    width: 49.5%;
+    height: 270px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16); 
+    display: flex;
+}
+.list_groupe_body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.list_groupe_time{
+    width: 100%;
+    height: 10%;
+}
+.list_groupe_name{
+    width: 100%;
+    height: 25%;
+    border-bottom: 1px solid #9a09ff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.list_groupe_name p{
+    width: 100%;
+    font-weight: bolder;
+    font-size: 2em;
+    margin: 0;
+}
+.list_groupe_description{
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.list_groupe_description p{
+    width: 100%;
+    margin: 0;
+    color: #575757;
+}
+.list_groupe_solicitud{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.list_groupe_solicitud a{
+    text-decoration: none;
+    width: 70%;
+    padding: 5px;
+    background-color: #2e1eff;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: larger;
+}

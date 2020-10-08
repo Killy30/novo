@@ -5,23 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/profesor/groupe.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </head>
 <body>
     <%include header_p%>
 
-    <div class="config_groupe">
-        <div class="name_groupe" style="background-color: <%=groupe.color%>">
-            <p><%=groupe.name%></p><p><%=groupe.nivel%></p>
+    <div class="header_groupe">
+        <div class="info">
+            <div class="name_groupe">
+                <p><%=groupe.name%> <%=groupe.nivel%></p>
+            </div>
+            <div class="descrip_groupe">
+                <p><%=groupe.description%></p>
+            </div>
         </div>
-        <div class="cth">
-            <a href="/create_task/<%=groupe.id%>">Crear tarea</a>
+        <div class="links">
+            <div class="cth">
+                <a href="" id="btn_open">Crear tarea</a>
+            </div>
+            <div class="cth">
+                <a href="/solicitudes/<%=groupe.id%>">Solicitudes</a>
+            </div>
+            <div class="cth">
+                <a href="">Mienbros</a>
+            </div>
+            <div class="cth">
+                <a href="">Chat</a>
+            </div>
+            <div class="cth">
+                <a href="">Calificaciones</a>
+            </div>
         </div>
-        <div class="cth">
-            <a href="">Mienbros</a>
-        </div>
-        <div class="cth">
-            <a href="">Calificaciones</a>
-        </div>
+        
     </div>
     
     <div class="container">
@@ -31,5 +48,7 @@
         </div>
     </div>
     
+    <%include overlay_task%>
+    <script src="../../js/groupe.js"></script>
 </body>
 </html>

@@ -3,14 +3,12 @@ header{
     width: 100%;
     border-bottom: 1px solid #fff;
     display: flex;
-    /* background: #0575E6; 
-    background: -webkit-linear-gradient(to bottom, #021B79, #0575E6);  
-    background: linear-gradient(to bottom, #021B79, #0575E6); */
-    border-bottom: 1px solid rgb(167, 167, 167);
-    background-color: rgb(29, 29, 29);
+    border-bottom: 1px solid rgb(219, 219, 219);
     position: fixed;
     justify-content: space-between;
     align-items: flex-end;
+    background-color: #051228;
+    z-index: 1;
 }
 .box_logo{
     width: 130px;
@@ -48,4 +46,5 @@ li a{
 }
 li a:hover{
     border-bottom: 1px solid #fff;
+    color: #fff;
 }

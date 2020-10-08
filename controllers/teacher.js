@@ -16,10 +16,6 @@ const upload = multer({storage}).array("file")
 
 const ctlr = {}
 
-ctlr.crear_grupo_g = (req, res) =>{
-    res.render('./profesor/crear_grupo')
-}
-
 ctlr.create_groupe_p = async(req, res) =>{
     const user = req.user;
     const new_groupe = new Groupe()
@@ -35,6 +31,7 @@ ctlr.create_groupe_p = async(req, res) =>{
     res.redirect('/groupe/'+new_groupe.name)
 }
 
+//router
 ctlr.groupe = async(req, res) =>{
     const groupe = await Groupe.findOne({name: req.params.name}).populate('user')
     res.render('./profesor/groupe', {groupe})
@@ -44,7 +41,17 @@ ctlr.create_task = async(req, res) =>{
     const groupe = await Groupe.findOne({_id: req.params.id})
     res.render('./profesor/createTask',{groupe})
 }
+ctlr.recordatorio = (req, res) =>{
+    res.render('./profesor/recordatorio', {user:req.user})
+}
+ctlr.solicitud = async (req, res) =>{
+    const user = req.user
+    const groupe = await Groupe.findOne({_id: req.params.id})
+    res.render('./profesor/pages/solicitud', {user, groupe})
+}
 
+
+//json
 ctlr.create_task_p =  async (req, res, next) =>{
     const groupe = await Groupe.findOne({_id: req.params.id})
 
@@ -74,10 +81,6 @@ ctlr.create_task_p =  async (req, res, next) =>{
     // })
     
     res.redirect('/groupe/'+groupe.name)
-}
-
-ctlr.recordatorio = (req, res) =>{
-    res.render('./profesor/recordatorio', {user:req.user})
 }
 
 ctlr.recordatorio_post = async(req, res) =>{

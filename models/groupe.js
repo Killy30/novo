@@ -6,8 +6,9 @@ const groupeSchema = new Schema({
     description: {type: String},
     color:       {type: String},
     teacher:     {type: Schema.Types.ObjectId, ref: 'user' },
-    student:     [{type: Schema.Types.ObjectId, ref: 'user' }],
-    tasks:     [{type: Schema.Types.ObjectId, ref: 'task' }]
+    students:    [{type: Schema.Types.ObjectId, ref: 'user' }],
+    tasks:       [{type: Schema.Types.ObjectId, ref: 'task' }],
+    solicitud:   [{type: Schema.Types.ObjectId, ref: 'user' }]
 })
 
 module.exports = model('groupe', groupeSchema)
