@@ -18,13 +18,19 @@ module.exports = app => {
 
     // teacher
     router.post('/create_groupe', estaAutenticado, teacher.create_groupe_p)
-    router.get('/groupe/:name', estaAutenticado, teacher.groupe)
-    router.get('/create_task/:id', estaAutenticado, teacher.create_task)
+    router.get('/groupe/:id', estaAutenticado, teacher.groupe)
     router.post('/create_task/:id', estaAutenticado, teacher.create_task_p)
     router.get('/recordatorio/:id', estaAutenticado, teacher.recordatorio)
     router.post('/recordatorios/:id', estaAutenticado, teacher.recordatorio_post)
     router.get('/alarm', estaAutenticado, teacher.alamr_function)
     router.get('/solicitudes/:id', estaAutenticado, teacher.solicitud)
+    router.get('/groupe_id/:id', estaAutenticado, teacher.groupe_id)
+    router.get('/accept-user/:id', estaAutenticado, teacher.acceptUser)
+    router.get('/delete-groupe/:id', estaAutenticado, teacher.deleteGroupe)
+    router.get('/mienbros/:id', estaAutenticado, teacher.mienbros)
+    router.get('/delete-user-groupe/:id', estaAutenticado, teacher.deleteUserAtGroupe)
+    router.get('/get-tasks/:id', estaAutenticado, teacher.getTasks)
+    router.get('/groupe-chat/:id', estaAutenticado, teacher.groupe_chat)
 
 
     router.get('/emails', estaAutenticado, home.emails)

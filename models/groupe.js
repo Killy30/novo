@@ -5,6 +5,7 @@ const groupeSchema = new Schema({
     nivel:       {type: String},
     description: {type: String},
     color:       {type: String},
+    time:        {type: Date, default: Date.now},
     teacher:     {type: Schema.Types.ObjectId, ref: 'user' },
     students:    [{type: Schema.Types.ObjectId, ref: 'user' }],
     tasks:       [{type: Schema.Types.ObjectId, ref: 'task' }],

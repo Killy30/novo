@@ -1,52 +1,51 @@
-<div class="overlay">
-    <div class="ventana_flotante">
-        <div class="card">
-            <div class="card-header">
-                <h2>crear tarea</h2>
-                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+<div class="overlay" id="overlay" data-id="<%=groupe.id%>">
+    <div class="box_tab">
+        <div class="box_card">
+            <div class="card_heade">
+                <ul class="" id="my_Tab">
+                    <li class="item_one item_active" >
+                        Tarea libre
                     </li>
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                    <li class="item_two" >
+                        Tarea limitada
                     </li>
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-                    </li>
-                </ul> -->
+                </ul>
             </div>
-            <div class="card-body" >
-                <div class="" id="home" role="tabpanel">
-                    <form class="form-groupe" action="">
+            <div class="card_body" >
+                <div class="" id="tab_panel_one">
+                    <form class="form-groupe" action="/create_task/<%=groupe.id%>" method="post" enctype="multipart/form-data">
                         <div class="custom-file form-groupe">
-                            <label for="archivo" class="custom-file-label">Subir archivo</label>
+                            <label for="file" class="custom-file-label">Subir archivo</label>
                             <input type="file" name="file" class="custom-file-input" id="" multiple>
                         </div>
                         <div class="form-groupe mt-2">
-                            <textarea name="descripcion_type_file" class="form-control" required placeholder="Instrucciones"></textarea>
+                            <textarea name="description" class="form-control" rows="5" required placeholder="Instrucciones"></textarea>
                         </div>
                         <div class="form-groupe mt-3">
-                            <button class="btn" id="btn_cancel">Cancelar</button>
+                            <button class="btn btn-outline-dark" id="btn_cancel">Cancelar</button>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                     </form>
                 </div>
-                <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <form class="form-groupe" action="" method="post">
-                        <textarea name="descripcion_type_texto" id="" class="form-control" ></textarea>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                
+                <div class="tab_panel_two" id="tab_panel_two" style="display: none;">
                     <form class="form-groupe" action="/create_task/<%=groupe.id%>" method="post" enctype="multipart/form-data">
                         <div class="custom-file">
-                            <label class="custom-file-label" for="imagen">Subir imagen</label>
+                            <label class="custom-file-label" for="file">Subir archivo</label>
                             <input type="file" name="file" class="custom-file-input" id="" multiple>
                         </div>
-                        <textarea name="descripcion_type_image" class="form-control" id="" placeholder="Instrucciones"></textarea>
-                        <button class="btn" type="submit">Enviar</button>
+                        <div class="form-groupe mt-2">
+                            <textarea name="description" required class="form-control" id="" rows="4" placeholder="Instrucciones"></textarea>
+                        </div>
+                        <div class="form-groupe mt-2">
+                            <input type="datetime-local" name="limit_time" required class="form-control"  id="">
+                        </div>
+                        <div class="form-groupe mt-3">
+                            <button class="btn btn-outline-dark" id="btn_cancel_two">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
                     </form>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

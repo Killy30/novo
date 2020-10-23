@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const {database} = require('./keys')
 
 mongoose.connect(database.URI, {
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useNewUrlParser: true
 })
     .then(db => console.log('DB is connected'))
     .catch(err => console.log('error in DB: ', err))

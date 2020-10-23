@@ -25,18 +25,22 @@ ctlr.solicitar_groupe = async (req, res)=>{
     const groupe = await Groupe.findOne({_id: req.params.id})
 
     let index = groupe.solicitud.indexOf(user._id)
+    let s = user.groupes.includes(groupe._id)
 
-    if(index == -1){
-        groupe.solicitud.push(user)
-        await groupe.save()
-        return res.json(true)
+    if(s == false){
+        if(index == -1){
+            groupe.solicitud.push(user)
+            await groupe.save()
+            return res.json(true)
+        }
+        
+        if(index !== -1){
+            groupe.solicitud.splice(index, 1)
+            await groupe.save()
+            return res.json(false)
+        }
     }
-    
-    if(index !== -1){
-        groupe.solicitud.splice(index, 1)
-        await groupe.save()
-        return res.json(false)
-    }
+    res.json('alredy exist')
 }
 
 module.exports = ctlr

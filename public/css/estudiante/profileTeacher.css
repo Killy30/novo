@@ -17,8 +17,8 @@ body{
     border-bottom: 2px solid #051228;
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-end;
+    flex-wrap: wrap;
 }
 .img_profile{
     width: 150px;
@@ -30,7 +30,17 @@ body{
 .img_profile img{
     width: 100%;
 }
-
+.name_teacher{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.name_teacher p{
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 0;
+}
 
 
 .body_profile{
@@ -44,6 +54,7 @@ body{
     flex-wrap: wrap;
 }
 
+
 .box_list{
     width: 49.5%;
     height: 270px;
@@ -52,11 +63,13 @@ body{
     -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
     box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16); 
     display: flex;
+    background-color: #ffffff;
+    margin-bottom: 15px; 
 }
 .list_groupe_body{
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
 }
 .list_groupe_time{
@@ -65,9 +78,8 @@ body{
 }
 .list_groupe_name{
     width: 100%;
-    height: 25%;
+    height: 21%;
     border-bottom: 1px solid #9a09ff;
-    padding: 10px;
     box-sizing: border-box;
 }
 .list_groupe_name p{
@@ -79,7 +91,7 @@ body{
 .list_groupe_description{
     width: 100%;
     height: 50%;
-    padding: 10px;
+    padding: 10px 0;
     box-sizing: border-box;
 }
 .list_groupe_description p{
@@ -89,16 +101,43 @@ body{
 }
 .list_groupe_solicitud{
     width: 100%;
-    height: 15%;
+    height: 18%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .list_groupe_solicitud a{
+   
+}
+.enviarSolicitud{
     text-decoration: none;
     width: 70%;
     padding: 5px;
     background-color: #2e1eff;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: larger;
+}
+
+.Solicitud_aceptada{
+    text-decoration: none;
+    padding: 7px 15px;
+    background-color: #ffffff;
+    border: 1px solid rgba(131, 131, 131, 0.8);
+    color: #363636;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: larger;
+}
+.btn_go_groupe{
+    text-decoration: none;
+    padding: 7px 15px;
+    background-color: #130068;
     color: #ffffff;
     display: flex;
     justify-content: center;

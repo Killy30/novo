@@ -1,16 +1,14 @@
 const {Schema, model} = require('mongoose')
 
 const newTask = new Schema({
-    archivo:     {type: String},
-    descripcion_a: {type: String},
-
-    texto:       {type: String},
-
-    image:       {type: String},
-    descripcion_i: {type: String},
-
-    groupe:      {type: Schema.Types.ObjectId, ref: 'groupe' },
-    user:        {type: Schema.Types.ObjectId, ref: 'user' }
+    
+    description:  {type: String},
+    limitTime:    {type: Date},
+    timesAgo:     {type: Date, default: Date.now},
+    groupe:       {type: Schema.Types.ObjectId, ref: 'groupe' },
+    files:        [{
+        file: {type: String}
+    }],
 }) 
 
 module.exports = model('task', newTask);

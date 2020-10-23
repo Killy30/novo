@@ -40,18 +40,24 @@ body{
 } */
 .list{
     width: 100%;
-    margin-top: 15px;
+    margin-top: 10px;
     padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-top: 2px solid #ddd;
+    
+}
+.titulo{
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 
 .containe_two{
-    width: 260px;
-    background-color: #eeeeee;
+    width: 280px;
+    background-color: #ffffff;
     border-radius: 3px;
     position: fixed;
     margin-left: 60%;
@@ -60,6 +66,9 @@ body{
     flex-wrap: wrap;
     top: 80px;
     left: 250px;
+    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  
 }
 .box_recordatorio{
     width: 100%;
@@ -78,7 +87,7 @@ body{
     font-weight: bolder;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgb(211, 211, 211);
 }
 .body_recor{
     width: 100%;
@@ -125,15 +134,19 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #eeeeee;
-    padding: 15px;
+    background-color: #ffffff;
+    padding-top: 15px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  
 }
 .fotoUser{
     width: 130px;
     height: 130px;
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(0, 140, 255);
+    border: 3px solid rgb(0, 31, 116);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -142,24 +155,57 @@ body{
     width: 100%;
 }
 .fullName{
-    width: 90%;
-    height: 60px;
+    width: 100%;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .fullName p{
-    margin-right: 5px;
     color: rgb(15, 15, 15);
     font-family: sans-serif;
     font-size: 20px;
     text-align: center;
+    margin: 0;
+}
+.userD_fooder{
+    width: 100%;
+    background-color: rgb(0, 31, 116);
+    display: flex;
+    color: #ffffff;
+    padding: 5px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.materias{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-right: 1px solid #ffffff;
+
+}
+.name_m{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.name_m p{
+    margin: 0;
+}
+.materias strong{
+    font-size: 18px;
 }
 
 .config{
     width: 100%;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     margin-top: 20px;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  
 }
 .config p{
     border-bottom: 1px solid #ccc;
@@ -167,7 +213,7 @@ body{
     padding-top: 20px;
 }
 .config p a{
-    color: rgb(0, 140, 255);
+    color: rgb(0, 31, 116);
     font-family: sans-serif;
     font-size: 18px;
     text-decoration: none;

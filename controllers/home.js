@@ -10,7 +10,8 @@ ctlr.index = (req, res) =>{
 ctlr.inicio = async(req, res) =>{
     const user = req.user
     const groupe = await User.findOne(user._id).populate('groupes')
-    res.render('inicio', {user, groupe})
+    const groupe_ = await Groupe.find({students: user._id}).populate('teacher')
+    res.render('inicio', {user, groupe, groupe_})
 }
 
 ctlr.emails = (req, res) =>{

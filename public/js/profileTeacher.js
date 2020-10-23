@@ -19,9 +19,11 @@ class Ui{
     async addListGroupe(){
         let teacher = await getdata.getUser()
         console.log(teacher);
+        listGroupe.innerHTML =''
 
         teacher.teacher.groupes.forEach(element => {
             let verify = element.solicitud.includes(_myId)
+            let verify_st = element.students.includes(_myId)
             listGroupe.innerHTML += `
                 <div class="box_list">
                     <div class="list_groupe_img">
@@ -38,9 +40,16 @@ class Ui{
                             <p>${element.description}</p>
                         </div>
                         <div class="list_groupe_solicitud">
-                            <a href="#" data-groupe_id="${element._id}" class="enviarSolicitud" >
-                                ${verify?'Cancelar solicitud':'Enviar solicitud'}
-                            </a>
+                            ${verify_st?
+                                `<a href="#" data-groupe_id="${element._id}" class="Solicitud_aceptada" >
+                                    Solicitud aceptada
+                                </a>
+                                <a href="" class="btn_go_groupe">Ir al grupo</a>
+                                `:
+                                `<a href="#" data-groupe_id="${element._id}" class="enviarSolicitud" >
+                                    ${verify?'Cancelar solicitud':'Enviar solicitud'}
+                                </a>`
+                            }
                         </div>
                     </div>
                 </div>
