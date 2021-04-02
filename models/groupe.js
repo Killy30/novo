@@ -7,6 +7,7 @@ const groupeSchema = new Schema({
     color:       {type: String},
     time:        {type: Date, default: Date.now},
     teacher:     {type: Schema.Types.ObjectId, ref: 'user' },
+    room:        {type: Schema.Types.ObjectId, ref: 'room'},
     students:    [{type: Schema.Types.ObjectId, ref: 'user' }],
     tasks:       [{type: Schema.Types.ObjectId, ref: 'task' }],
     solicitud:   [{type: Schema.Types.ObjectId, ref: 'user' }]

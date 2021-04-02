@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=groupe.name%> <%=groupe.nivel%></title>
+    <link rel="stylesheet" href="../../css/profesor/groupe.css">
+</head>
+<body>
+    <%-include('../header_e')%>
+
+    <div class="header_groupe">
+        <div class="info">
+            <div class="name_groupe">
+                <p><%=groupe.name%> <%=groupe.nivel%></p>
+            </div>
+            <div class="descrip_groupe">
+                <p><%=groupe.description%></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="box_groupe" id="body_groupe"></div>
+    </div>
+    
+    <script src="../../js/groupe.js"></script>
+</body>
+</html>

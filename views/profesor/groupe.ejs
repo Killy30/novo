@@ -3,49 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%=groupe.name%> <%=groupe.nivel%></title>
     <link rel="stylesheet" href="../../css/profesor/groupe.css">
 </head>
 <body>
-    <%include header_p%>
+    <%if(groupe.teacher == user.id){%>
+        <%-include('./header_p')%>
+    <%}else{%>
+        <%-include('../estudiante/header_e')%>
+    <%}%>
 
-    <div class="header_groupe">
-        <div class="info">
-            <div class="name_groupe">
-                <p><%=groupe.name%> <%=groupe.nivel%></p>
-            </div>
-            <div class="descrip_groupe">
-                <p><%=groupe.description%></p>
-            </div>
-        </div>
-        <div class="links">
-            <div class="cth">
-                <a href="" id="btn_open">Crear tarea</a>
-            </div>
-            <div class="cth">
-                <a href="/solicitudes/<%=groupe.id%>">Solicitudes</a>
-            </div>
-            <div class="cth">
-                <a href="/mienbros/<%=groupe.id%>">Mienbros</a>
-            </div>
-            <div class="cth">
-                <a href="/groupe-chat/<%=groupe.id%>">Chat</a>
-            </div>
-            <div class="cth">
-                <a href="">Calificaciones</a>
-            </div>
-            <div class="cth">
-                <a href="/delete-groupe/<%=groupe.id%>">Eliminar groupo</a>
-            </div>
-        </div>
-        
-    </div>
+    <%-include("./boxStudenst")%>
+
+    <div class="contain">
+        <%if(groupe.teacher == user.id){%>
+            <%include headerGroupe%>
+        <%}else{%>
+            <%-include('../estudiante/headerGroup_e')%>
+        <%}%>
     
-    <div class="container">
-        <div class="box_groupe" id="body_groupe"></div>
+        <div class="box_two">
+            <div class="info_groupe">
+                <div class="info">
+                    <div class="name_groupe">
+                        <p><%=groupe.name%> <%=groupe.nivel%></p>
+                    </div>
+                    <div class="descrip_groupe">
+                        <p><%=groupe.description %></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contain_task">
+                <div class="box_task_info">
+                    <strong>Tareas: <%=groupe.tasks.length%></strong>
+                </div>
+                <div class="box_groupe" id="body_groupe"></div>
+            </div>
+        </div>
     </div>
     
     <%include overlay_task%>
     <script src="../../js/groupe.js"></script>
+    <script src="../../js/boxStudents.js"></script>
+    <script src="../../js/headerGroupe.js"></script>
 </body>
 </html>

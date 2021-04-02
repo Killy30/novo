@@ -2,15 +2,223 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 .contain{
-    width: 90%;
+    width: 50%;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    margin-left: 20%;
 }
 .box_chat{
-    width: 90%;
-    height: 600px;
+    width: 100%;
+    height: 86%;
     background-color: #ffffff;
+    display: flex;
+    border-radius: 10px;
+    /* -webkit-box-shadow: 1px 20px 10px 2px rgba(0, 0, 0, 0.335);
+    -moz-box-shadow: 1px 20px 10px 2px rgba(0,0,0,0.335);
+    box-shadow: 1px 20px 10px 2px rgba(0,0,0,0.335); */
+
+    -webkit-box-shadow: 0px 0px 14px -8px #000000; 
+    box-shadow: 0px 0px 14px -8px #000000;
+}
+.box_message{
+    width: 100%;
+    height: 100%;
+}
+.message{
+    width: 100%;
+    height: 90%;
+    
+}
+.msg_header{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #cccc;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    overflow: hidden;
+
+}
+.msg_header p{
+    font-weight: bolder;
+    font-size: 18px;
+    margin: 0;
+}
+.show_message{
+    width: 100%;
+    height: 93%;
+    padding: 10px 60px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.bjsd{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+}
+.msg_hsd{
+    max-width: 65%;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: rgb(241, 239, 239);
+    box-sizing: border-box;
+    color:#000000 ;
+}
+.msg_name_o{
+   
+    box-sizing: border-box;
+}
+.msg_name_o p{
+    color: rgb(0, 110, 255);
+    font-size: 14px;
+    margin: 0;
+}
+.msg_hsd p{
+    margin: 0;
+    font-size: 15px;
+}
+
+
+.bjsd_my{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.msg_hsd_my{
+    max-width: 65%;
+    padding: 7px;
+    border-radius: 3px;
+    background-color: rgb(12, 12, 78);
+    color: #ffffff;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.msg_name{
+    border-bottom: 1px solid #ffffff;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    box-sizing: border-box;
+}
+.msg_hsd_my p{
+    margin: 0;
+}
+
+
+.msg_hsd_my_pro{
+    max-width: 65%;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: rgb(12, 12, 78);
+    color: #ffffff;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.msg_hsd_my_pro p{
+    margin: 0;
+}
+.msg_hsd_pro{
+    max-width: 65%;
+    padding: 7px;
+    border-radius: 3px;
+    background-color: rgba(241, 239, 239);
+    box-sizing: border-box;
+    color:#141414 ;
+}
+.msg_hsd_pro p{
+    margin: 0;
+    font-size: 15px;
+}
+.msg_name_o_pro{
+  
+}
+.msg_name_o_pro p{
+    font-size: 14px;
+    color: rgb(231, 0, 0);
+    margin: 0;
+}
+
+
+
+
+.fooder{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #cccc;
+}
+.fooder form{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.fooder form textarea{
+    width: 83%;
+    height: 35px;
+    max-height: 60px;
+    min-height: 40px;
+    outline: none;
+    border: 1px solid #cccc;
+    border-radius: 5px;
+    padding: 5px;
+
+
+}
+.fooder form button{
+    height: 40px;
+    width: 15%;
+    background-color: rgb(6, 6, 75);
+    color: #ffffff;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    font-size: large;
+}
+
+
+
+
+
+.box_online{
+    width: 30%;
+    height: 100%;
+    
+}
+.online_herder{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #cccc;
+}
+.online_herder p{
+    margin: 0;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.box_administrator{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #cccc;
+    box-sizing: border-box;
+}
+.box_administrator p{
+    /* margin: 0; */
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+.online{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }

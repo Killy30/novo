@@ -5,14 +5,14 @@ body{
     justify-content: center;
     flex-wrap: wrap;
 }
-.container{
-    margin-top: 100px;
+.contain{
+    /* margin-top: 40px; */
     width: 70%;
 
 }
 .heade_solic{
     padding-top: 20px;
-    border-bottom: 1px solid #cccc;
+    /* border-bottom: 1px solid #cccc; */
 
 }
 
@@ -31,6 +31,8 @@ body{
     display: flex;
     padding: 25px;
     box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 15px;
     -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
     -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
     box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  

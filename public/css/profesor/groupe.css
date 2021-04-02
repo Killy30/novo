@@ -1,3 +1,8 @@
+:root{
+    --color_bara: #020518;
+    --color_fooderTask: #0D5EDE
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -5,175 +10,101 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-.container{
-    width: 60%;
-    margin-top: 70px;
-}
-.box_groupe{
-    width: 90%;
-}
-.header_groupe{
-    width: 100%;
-    height: 300px;
-    background-color: #002566;
-    margin-top: 60px;
+.contain{
+    width: 50%;
     display: flex;
-    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 20%;
+    position: relative;
+    
+}
+
+
+.box_two{
+    width: 100%;
+}
+
+.box_task_info{
+    width: 100%;
+    border-top: 1px solid var(--color_bara);
+    border-bottom: 1px solid var(--color_bara);
+    margin-bottom: 15px;
+    padding: 7px 0 7px 0;
+}
+.box_task_info strong{
+   font-size: large;
+}
+
+/* info groupe */
+.info_groupe{
+    width: 100%;
+    margin: 10px 0 15px 0;
+    display: flex;
+    padding: 15px;
     box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 14px -8px #000000; 
+    box-shadow: 0px 0px 14px -8px #000000;  
 }
 .info{
-    width: 80%;
-    padding: 10px;
+    width: 100%;
+    
 }
 
 .name_groupe{
     width: 100%;
 }
 .name_groupe p{
-    padding-right: 10px;
     margin: 0;
     font-family: sans-serif;
     font-size: 2em;
-    color: #fff;
+    color: rgb(24, 24, 24);
 }
 .descrip_groupe p{
-    padding-right: 10px;
     margin: 0;
     font-family: sans-serif;
     font-size: 1em;
-    color: rgb(211, 211, 211);
+    color: rgb(61, 61, 61);
 }
-
-
-.links{
-    width: 20%;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 3px;
-}
-.cth{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.cth a{
-    width: 100%;
-    font-family: sans-serif;
-    height: 40px;
-    color: #051228;
-    border-bottom: 1px solid #051228;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    box-sizing: border-box;
-}
-.cth a:hover{
-    background-color: #051228de;
-    color: #fff;
-
-}
-
-
-/* overlay */
-.overlay{
-    background-color: rgba(0, 0, 0, .3);
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-}
-
-.active{
-    visibility: visible;
-}
-
-.box_tab{
-    background-color: #fafaff;
-    border-radius: 5px;
-    width: 600px;
-    height: 350px;
-}
-
-
-.card_heade ul{
-    width: 100%;
-    display: flex;
-    padding: 0;
-}
-.card_heade ul li{
-    list-style: none;
-    width: 50%;
-    padding: 0;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: larger;
-    cursor: pointer;
-}
-
-
-.card_heade ul li a{
-    text-decoration: none;
-    color: rgb(26, 26, 26);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: larger;
-}
-
-.item_one{
-    border-top-left-radius: 3px ;
-}
-.item_one{
-    border-top-right-radius: 3px ;
-}
-
-
-
-.item_active{
-    border-bottom: 2px solid #051228;
-}
-
-.card_body{
-    padding: 0 15px 15px 15px;
-}
-
 
 
 /* tasks */
+.contain_task{
+    width: 100%;
+
+}
+
 .box_groupe{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 .box_task{
-    width: 60%;
-    height: 380px;
+    width: 49.5%;
+    height: 240px;
     background-color: #ffffff;
-    border-radius: 3px;
+    border-radius: 10px;
     margin-bottom: 20px;
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(54, 54, 54);
     box-sizing: border-box;
-    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
-    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
-    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    -webkit-box-shadow: 0px 0px 14px -8px #000000; 
+    box-shadow: 0px 0px 14px -8px #000000;  
+    text-decoration: none;
+}
+.box_task:hover{
+    text-decoration: none;
 }
 .box_time_task{
     width: 100%;
-    height: 10%;
+    height: 15%;
     display: flex;
     justify-content: space-between;
+    margin: 5px 5px 0 5px;
 }
 .box_timeAgo{
     display: flex;
@@ -184,9 +115,10 @@ body{
 }
 .box_descp{
     width: 100%;
-    height: 40%;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 7px;
+    max-height: 45%;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .box_descp p{
     margin: 0;
@@ -197,13 +129,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-end;
+    background: var(--color_fooderTask);
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px ;
+    color: white;
 }
 .box_file{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
 }
 .box_file img{
     width: 100%;
+    object-fit: cover;
 }
 .box_count_files p{
     font-size: 20px;
@@ -211,7 +149,7 @@ body{
 }
 .box_btn{
     width: 100%;
-    height: 20%;
+    height: 17%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,22 @@
+
+
+
+<div class="overlay_task">
+    <div class="boxToSent">
+        <div class="" id="tab_panel_one">
+            <form class="form-groupe" action="/sent_tasks/<%=task.id%>" method="post" enctype="multipart/form-data">
+                <div class="custom-file form-groupe">
+                    <label for="file" class="custom-file-label">Subir archivo</label>
+                    <input type="file" name="file" class="custom-file-input" id="" multiple required>
+                </div>
+                <div class="view_files" id="view_files">
+
+                </div>
+                <div class="form-groupe mt-3">
+                    <button class="btn btn-outline-dark" id="btn_cancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

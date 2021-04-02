@@ -1,0 +1,32 @@
+:root{
+    --color_bara: #020518
+}
+.links{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 70px;
+    border-bottom: 1px solid var(--color_bara);
+    align-self: flex-start;
+}
+.links_groupe{
+    display: flex;
+}
+.li{
+    margin-right: 7px;
+}
+.li a{
+    width: 100%;
+    font-family: sans-serif;
+    height: 40px;
+    color: #5c5c5c;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.li a:hover{
+    color: rgb(0, 140, 255);
+
+}

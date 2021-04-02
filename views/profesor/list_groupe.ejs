@@ -5,21 +5,22 @@
 <%groupe.groupes.forEach(groupe =>{%>
     <div class="groupe" >
         <div class="box_element">
-            <div class="list_header">
-
+            <div class="imgClassR">
+                <img src="../../img/imgcr.jpg" alt="">
             </div>
+            .
             <div class="list_body">
                 <div class="name_groupe">
                     <p><%=groupe.name%> <%=groupe.nivel%></p>
                 </div>
-                <div class="description">
+                <!-- <div class="description">
                     <p><%=groupe.description%></p>
+                </div> -->
+                <div class="fooder">
+                    <a href="/groupe/<%=groupe.id%>">
+                        Entrar
+                    </a>
                 </div>
-            </div>
-            <div class="fooder">
-                <a href="/groupe/<%=groupe.id%>">
-                    Entrar
-                </a>
             </div>
         </div>
     </div>

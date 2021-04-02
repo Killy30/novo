@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mienbros del grupo</title>
     <link rel="stylesheet" href="../../css/profesor/mienbros.css">
 </head>
 <body>
     <%-include('../header_p')%>
-
-    <div class="container">
+    
+    <div class="contain">
+        <%-include("../headerGroupe")%>
         <div class="heade_solic">
-            <h2>Mienbros del grupo</h2>
+            <h2>Mienbros</h2>
         </div>
         <div class="body_solic">
             <div class="box_solicitud" data-_id_g="<%=groupe.id%>" id="boxSolicitud"></div>
         </div>
     </div>
 
+    <%-include("../overlay_task")%>
+
     <script src="../../../js/mienbros.js"></script>
+    <script src="../../../js/headerGroupe.js"></script>
 </body>
 </html>

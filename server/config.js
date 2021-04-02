@@ -35,7 +35,5 @@ module.exports = app => {
     // routes
     routes(app)
 
-
-
     return app
 }

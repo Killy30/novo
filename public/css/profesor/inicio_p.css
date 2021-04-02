@@ -19,13 +19,13 @@ body{
 }
 .headerF{
     width: 100%;
-    height: 280px;
+    height: 260px;
     background-color: #ccc;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 7px;
+    border-radius: 3px;
 }
 /* .headerF img{
     width: 100%;
@@ -49,9 +49,10 @@ body{
 }
 .titulo{
     width: 100%;
-    border-bottom: 2px solid #ddd;
-    margin-bottom: 10px;
+    border-bottom: 1px solid #020518;
+    margin-bottom: 15px;
     font-size: 18px;
+    padding-bottom: 5px;
 }
 
 
@@ -130,20 +131,29 @@ body{
     top: 80px;
     position: fixed;
 }
+.boxuc{
+    height: 89%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 100px;
+    /* background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
+    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  */
+}
 .userD{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: #ffffff;
-    padding-top: 15px;
+    padding: 25px 10px;
+    box-sizing: border-box;
     border-radius: 3px;
-    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
-    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
-    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  
+     
 }
 .fotoUser{
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(0, 31, 116);
@@ -156,7 +166,7 @@ body{
 }
 .fullName{
     width: 100%;
-    margin-bottom: 15px;
+    margin: 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,26 +211,33 @@ body{
 .config{
     width: 100%;
     background-color: #ffffff;
-    margin-top: 20px;
-    border-radius: 3px;
-    -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
-    -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
-    box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);  
+    border-top: 20px solid #e8e8e8;
+    padding: 5px 0;
+  
 }
 .config p{
-    border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 45px;
     margin: 0;
-    padding-top: 20px;
+    
 }
 .config p a{
-    color: rgb(0, 31, 116);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: rgb(36, 36, 36);
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     text-decoration: none;
     padding-left: 7px;
+    box-sizing: border-box;
+    
 }
 .config p a:hover{
-    color: rgb(0, 52, 110);
+    color: rgb(245, 249, 255);
+    background-color: rgb(0, 119, 230);
+    transition: 0.5s;
 }
 
 /* overlay */

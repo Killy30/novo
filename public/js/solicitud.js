@@ -44,7 +44,7 @@ class Ui{
 boxSolicitud.addEventListener('click', async(e) =>{
     if(e.target.classList.contains('btn_accept')){
         e.preventDefault()
-        console.log('hey');
+    
         let ids = {
             groupe_id: _gpId,
             user_id:   e.target.dataset.user_id

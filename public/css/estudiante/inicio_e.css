@@ -43,6 +43,12 @@
     justify-content: space-between;
     border-top: 2px solid #ddd;
 }
+.titulo{
+    width: 100%;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
 
 
 

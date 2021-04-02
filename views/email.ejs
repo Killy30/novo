@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <%if(user.category === 'teacher'){%>
+        <%-include('./profesor/header_p')%>
+    <%}else{%>
+        <%-include('./estudiante/header_e')%>
+    <%}%>
     <h1>email</h1>
 </body>
 </html>

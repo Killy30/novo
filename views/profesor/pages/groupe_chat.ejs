@@ -7,12 +7,44 @@
     <title>Chat</title>
 </head>
 <body>
-    <%-include('../header_p')%>
-    <div class="contain">
-        <div class="box_chat">
+    <%if(groupe.teacher == user.id){%>
+        <%-include('../header_p')%>
+    <%}else{%>
+        <%-include('../../estudiante/header_e')%>
+    <%}%>
 
+    <%-include("../boxStudenst")%>
+    <div class="contain">
+        <%if(groupe.teacher == user.id){%>
+            <%-include("../headerGroupe")%>
+        <%}else{%>
+            <%-include('../../estudiante/headerGroup_e')%>
+        <%}%>
+
+        <div class="box_chat" id="box_chat" data-idg="<%=groupe.id%>"  data-id="<%=groupe.teacher%>" >
+            <div class="box_message">
+                <div class="message">
+                    <div class="msg_header">
+                        <p><%=groupe.name%> <%=groupe.nivel%></p>
+                    </div>
+                    <div class="show_message" data-id="<%=user.id%>" id="show_message"></div>
+                </div>
+                <div class="fooder">
+                    <form id="form_chat" action="">
+                        <textarea name="" id="text" cols="30"  rows="10"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+
+    <%if(groupe.teacher == user.id){%>
+        <%-include("../overlay_task")%>
+    <%}%>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="../../../js/chat.js"></script>
+    <script src="../../js/boxStudents.js"></script>
+    <script src="../../../js/headerGroupe.js"></script>
 </body>
 </html>

@@ -7,9 +7,11 @@ const userSchema = new Schema({
     email:         {type: String},
     password:      {type: String},
     category:      {type: String},
+    rooms:         [{type: Schema.Types.ObjectId, ref: 'Rooms'}],
     groupes:       [{ type: Schema.Types.ObjectId, ref: 'groupe' }],
     task:          [{ type: Schema.Types.ObjectId, ref: 'task' }],
-    recordatorios: [{type: Schema.Types.ObjectId, ref: 'recordatorio'}]
+    recordatorios: [{type: Schema.Types.ObjectId, ref: 'recordatorio'}],
+    listTaskSubmitted: [{type: Schema.Types.ObjectId, ref: 'taskSubmitted' }]
 })
 
 userSchema.methods.encryptPassword = (password) => {

@@ -31,6 +31,14 @@ module.exports = app => {
     router.get('/delete-user-groupe/:id', estaAutenticado, teacher.deleteUserAtGroupe)
     router.get('/get-tasks/:id', estaAutenticado, teacher.getTasks)
     router.get('/groupe-chat/:id', estaAutenticado, teacher.groupe_chat)
+    router.get('/room/:id', estaAutenticado, teacher.room)
+    router.get('/task/:id', estaAutenticado, teacher.viewTask)
+    router.get('/get-task/:id', estaAutenticado, teacher.getTask)
+    router.get('/profile/student/:id', estaAutenticado, teacher.viewProfileStudent)
+    router.get('/get-my-user', estaAutenticado, teacher.getMyUser)
+    router.post('/sent_tasks/:id', estaAutenticado, teacher.sent_task)
+    router.get('/getListTaskSubmitted/:id', estaAutenticado, teacher.getListTaskSubmitted)
+
 
 
     router.get('/emails', estaAutenticado, home.emails)
@@ -43,6 +51,8 @@ module.exports = app => {
     router.get('/profile/:id', estaAutenticado, student.profile_teacher)
     router.get('/teacher/:id', estaAutenticado, student.getTeacher)
     router.get('/solicitar_groupe/:id', estaAutenticado, student.solicitar_groupe)
+    router.get('/groupe-student/:id', estaAutenticado, student.studentGroupe)
+
 
     function estaAutenticado(req, res, next){
         if(req.isAuthenticated()){

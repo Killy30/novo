@@ -1,3 +1,5 @@
+import Prueba from './Prueba.js'
+
 const body_alarm = document.getElementById('body_recor')
 const btn_open = document.getElementById('btn_open')
 const btn_cancel = document.getElementById('btn_cancel')
@@ -5,7 +7,11 @@ const btn_cancel = document.getElementById('btn_cancel')
 document.addEventListener('DOMContentLoaded', () => {
     const height_value = innerHeight;
     document.querySelector('.box_config').style.height = height_value + 'px';
-    data.getData()
+    datas.getData()
+
+    const prueba = new Prueba()
+    prueba.verPrueba()
+    
 })
 
 btn_open.addEventListener('click', (e)=>{
@@ -18,18 +24,18 @@ btn_cancel.addEventListener('click', (e)=>{
     document.querySelector('.overlay').classList.remove('active')
 })
 
-class Data {
+class Datas {
     getData(){
         fetch('/alarm')
         .then(res => res.json())
         .then(data =>{
-            add.addData(data.msg)
+            adds.addData(data.msg)
            
         })
     }
 }
 
-class Add{
+class Adds{
     addData(data){
         let array = data.filter(element => {
             let time = new Date(element.timeA)
@@ -92,5 +98,5 @@ function fecha(date){
 
 
 
-const add = new Add()
-const data = new Data()
+const adds = new Adds()
+const datas = new Datas()

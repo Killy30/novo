@@ -1,6 +1,7 @@
 const User = require('../models/user')
 const Groupe = require('../models/groupe')
-const { use } = require('passport')
+const Room = require('../models/room')
+
 
 const ctlr = {}
 
@@ -9,6 +10,12 @@ ctlr.profile_teacher = async (req, res) =>{
     const user = req.user
     const teacher = await  User.findOne({_id: req.params.id}).populate('groupes')
     res.render('./estudiante/pages/profileTeacher',{user, teacher})
+}
+ctlr.studentGroupe = async(req, res) =>{
+    const user = req.user
+    const groupe = await Groupe.findOne({_id: req.params.id}).populate('user')
+    const room = await Room.findOne({_id: groupe._id})
+    res.render('./profesor/groupe', {groupe,room,user})
 }
 
 //json
