@@ -1,12 +1,12 @@
-
+import DataRequest from './data.js'
 
 const description = document.getElementById('description')
-const task_files = document.getElementById('task_files')
 const listTaskSubmitted = document.getElementById('show_taskSent')
+
 let id = description.dataset.id
 
-const btn_cancelForm = document.getElementById('btn_cancel')
-const btn_openForm = document.getElementById('btn_openForm')
+// const btn_cancelForm = document.getElementById('btn_cancel')
+// const btn_openForm = document.getElementById('btn_openForm')
 // const overlay = document.getElementById('overlay')
 
 // btn_cancel_two.addEventListener('click', (e)=>{
@@ -33,11 +33,19 @@ const getListTask = async()=>{
 }
 
 
-
 const addTask = async()=>{
-    let task = await getTask()
-    console.log(task);
+    const task_files = document.getElementById('task_files')
+    const dataRequest = new DataRequest()
+    let ddata = dataRequest.getTask('',"/get-task/",id)
+    
+    // let hy = await ddata.json()
+    // console.log(ddata);
+    // console.log(hy);
 
+    let task = await getTask()
+
+    console.log(task.listTaskSubmitted);
+         
     description.innerHTML += `
     <p>
         ${task.description.replace(/\n/g,'<br>')}
@@ -55,36 +63,67 @@ const addTask = async()=>{
         </div>
         `
     }
+
+    const showMyTask = document.getElementById('showMyTask')
+    let _iduser = showMyTask.dataset.id
+
+    let todos = task.listTaskSubmitted.filter((element) =>{
+        return element.userSubmittedTasks == _iduser
+        
+    })
+
+    for(let i = 0; i < todos.length; i++ ){
+        for(let b = 0; b < todos[i].files.length; b++ ){
+            showMyTask.innerHTML += `
+                <div class="file_na">
+                    <p>${todos[i].files[b].nameFile}</p>
+                </div>
+    
+            `
+        }
+    }
 }
 
 const addListTask = async()=>{
     let tasksList = await getListTask()
-    console.log(tasksList);
-
+    
+    listTaskSubmitted.innerHTML = ''
     for(let i = 0; i < tasksList.length; i++ ){
-
-        listTaskSubmitted.innerHTML += `
         
-        <a href="" class="boxOne">
-            <div class="barra"></div>
-            <div class="boxct">
-                <div class="name">
-                    <p>${tasksList[i].userSubmittedTasks.name} ${tasksList[i].userSubmittedTasks.lastName}</p>
+        listTaskSubmitted.innerHTML += `
+        <a href="" class="boxOne seleccionar" data-idtask="${tasksList[i]._id}">
+            <div class="barra seleccionar" ${tasksList[i].status === false ?'style="background-color: red"': 'style="background-color: rgb(0, 212, 18)"'} data-idtask="${tasksList[i]._id}"></div>
+            <div class="boxct seleccionar" data-idtask="${tasksList[i]._id}" >
+                <div class="name seleccionar" data-idtask="${tasksList[i]._id}">
+                    <p class="fullName seleccionar" data-idtask="${tasksList[i]._id}">
+                        ${tasksList[i].userSubmittedTasks.name} 
+                        ${tasksList[i].userSubmittedTasks.lastName}
+                    </p>
                 </div>
-                <div class="boxFiles">
-                    <div class="filesTwo">
-                        <img src="../img/logo_files.png" alt="">
+                <div class="boxFiles seleccionar" data-idtask="${tasksList[i]._id}">
+                    <div class="filesTwo seleccionar" data-idtask="${tasksList[i]._id}">
+                        <img class="seleccionar" data-idtask="${tasksList[i]._id}" src="../img/logo_files.png" alt="">
                     </div>
-                    <span>${tasksList[i].files.length}</span>
+                    <span class="seleccionar"data-idtask="${tasksList[i]._id}">
+                        ${tasksList[i].files.length}
+                    </span>
                 </div>
-                <div class="boxpc">
-                    <div class="pending">Pendiente</div>
-                    <div>
-                        <strong>00</strong>
+                <div class="boxpc seleccionar" data-idtask="${tasksList[i]._id}">
+                    <div class="pending seleccionar" ${tasksList[i].status === false ?'style="color: red"': 'style="color: rgb(0, 212, 18)"'} data-idtask="${tasksList[i]._id}" data-idtask="${tasksList[i]._id}">
+                        ${
+                            tasksList[i].status === false ? 'Pendiente':'Revisado'
+                        
+                        }
+                    </div>
+                    <div class="seleccionar" data-idtask="${tasksList[i]._id}">
+                        <strong class="seleccionar"data-idtask="${tasksList[i]._id}">
+                            ${
+                                tasksList[i].ratings===0?'00':tasksList[i].ratings
+                            }
+                        </strong>
                     </div>
                 </div>
             </div>
-            
         </a>`
     }
 }
@@ -92,12 +131,93 @@ const addListTask = async()=>{
 addTask()
 addListTask()
 
-btn_openForm.addEventListener('click', (e)=>{
-    e.preventDefault()
-    document.querySelector('.overlay_task').classList.add('active')
+var idTask; 
+listTaskSubmitted.addEventListener('click', async(e)=>{
+    e.preventDefault()    
+    if(e.target.classList.contains('seleccionar')){
+        
+        let _id = e.target.dataset.idtask
+        idTask=_id
+
+        let req = await fetch('/detailsTask/'+_id)
+        let res = await req.json()
+                
+        showDetailsTask(res)
+        document.querySelector('.overlay').classList.add("_active")
+        
+    }
 })
 
-btn_cancelForm.addEventListener('click', (e)=>{
-    e.preventDefault()
-    document.querySelector('.overlay_task').classList.remove('active')
+const showDetailsTask = (task) =>{
+    const d_name = document.querySelector('.d_name')
+    const files = document.querySelector('#files')
+    const status = document.getElementById('status') 
+    const ratings = document.getElementById('ratings')
+    console.log(task.taskView.userSubmittedTasks._id);
+
+    status.checked = task.taskView.status
+    ratings.value = task.taskView.ratings
+    
+    d_name.innerText = `
+        ${task.taskView.userSubmittedTasks.name} ${task.taskView.userSubmittedTasks.lastName}
+    `
+    files.innerHTML = ''
+    task.taskView.files.forEach(element => {
+        
+        files.innerHTML += `
+            <div>
+                <p>${element.nameFile}</p>
+            </div>
+        `
+    });
+
+}
+
+
+const btn_submitReview = document.getElementById('btn_dt')
+btn_submitReview.addEventListener('click', async(e) =>{
+    
+    const status = document.getElementById('status').checked 
+    const ratings = document.getElementById('ratings').value
+
+    if(ratings.trim() === '' && status === false){
+        alert('Debes llenar los campos');
+        return false
+    }
+
+    const data = {ratings,status}
+
+    fetch(`/post_status_ratings/${idTask}`, {
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data =>{
+        document.querySelector('.overlay').classList.remove("_active")
+        addListTask()
+    })
+    .catch((err) =>{
+        console.error('some error happened');
+    })
+
 })
+
+// const close_tab = document.getElementById('close_tab')
+// close_tab.addEventListener('click', (e)=>{
+//     e.preventDefault()
+//     document.querySelector('.overlay').classList.remove('_active')
+// })
+
+// btn_openForm.addEventListener('click', (e)=>{
+//     e.preventDefault()
+//     document.querySelector('.overlay_task').classList.add('active')
+// })
+
+// btn_cancelForm.addEventListener('click', (e)=>{
+//     e.preventDefault()
+//     document.querySelector('.overlay_task').classList.remove('active')
+// })
+

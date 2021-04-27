@@ -98,7 +98,8 @@ body{
     border-radius: 8px;
     padding: 5px 15px;
 }
-.name p{
+
+.fullName{
     font-size: 20px;
     margin: 0;
 }

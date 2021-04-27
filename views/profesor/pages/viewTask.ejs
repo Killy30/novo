@@ -19,7 +19,7 @@
         <%}else{%>
             <%-include('../../estudiante/headerGroup_e')%>
         <%}%>
-        <div class="task_contain">
+        <div class="task_contain" >
             <div class="boxdf">
                 <div class="task_description" id="description" data-id="<%=task.id%>"></div>
                 <div class="task_file" id="task_files"></div>
@@ -28,17 +28,19 @@
                 <div id="show_taskSent"></div>
             <%}else{%>
                 <div class="overlay_sentTask"></div>
-                <a id="btn_openForm" href="">Enviar Tarea</a>
+                <a id="btn_openForm" href="">Subir Tarea</a>
+                <div class="showMyTask" id="showMyTask" data-id="<%=user.id%>"></div>
             <%}%>
             
         </div>
+
     </div>
+     
     
-
     <%-include("../overlaySentTask")%>
-    <%-include("../overlay_task")%>
+    <%-include("../detailsTask")%>
 
-    <script src="../../../js/viewTask.js"></script>
+    <script src="../../../js/viewTask.js" type="module"></script>
     <script src="../../../js/headerGroupe.js"></script>
 
 </body>

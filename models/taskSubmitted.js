@@ -7,7 +7,9 @@ const newListTask = new Schema({
         nameFile: {type: String},
         size: {type: Number}
     }],
-    userSubmittedTasks: {type: Schema.Types.ObjectId, ref: 'user'}
+    userSubmittedTasks: {type: Schema.Types.ObjectId, ref: 'user'},
+    ratings: {type: Number, default:00},
+    status: {type:Boolean, default:false}
 }) 
 
 module.exports = model('taskSubmitted', newListTask);

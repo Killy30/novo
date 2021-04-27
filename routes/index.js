@@ -38,8 +38,8 @@ module.exports = app => {
     router.get('/get-my-user', estaAutenticado, teacher.getMyUser)
     router.post('/sent_tasks/:id', estaAutenticado, teacher.sent_task)
     router.get('/getListTaskSubmitted/:id', estaAutenticado, teacher.getListTaskSubmitted)
-
-
+    router.get('/detailsTask/:id', estaAutenticado, teacher.detailsTask)
+    router.post('/post_status_ratings/:id', estaAutenticado, teacher.post_status_ratings)
 
     router.get('/emails', estaAutenticado, home.emails)
     router.get('/notas', estaAutenticado, home.notas)

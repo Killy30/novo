@@ -39,7 +39,7 @@ let showAllMessage = async() =>{
             show_message.innerHTML +=`
                 <div class="bjsd_my">
                     <div class="msg_hsd_my_pro">
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -51,7 +51,7 @@ let showAllMessage = async() =>{
                         <div class="msg_name_o_pro">
                             <p>${user.name} ${user.lastName}</p>
                         </div>
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -60,7 +60,7 @@ let showAllMessage = async() =>{
             show_message.innerHTML +=`
                 <div class="bjsd_my">
                     <div class="msg_hsd_my">
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -72,7 +72,7 @@ let showAllMessage = async() =>{
                         <div class="msg_name_o">
                             <p>${user == undefined? 'Usuario Eliminado':`${user.name} ${user.lastName}`}</p>
                         </div>
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -99,7 +99,7 @@ let addMessage = (data) =>{
             show_message.innerHTML +=`
                 <div class="bjsd_my">
                     <div class="msg_hsd_my_pro">
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -111,7 +111,7 @@ let addMessage = (data) =>{
                         <div class="msg_name_o_pro">
                             <p>${user.name} ${user.lastName}</p>
                         </div>
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -120,7 +120,7 @@ let addMessage = (data) =>{
             show_message.innerHTML +=`
                 <div class="bjsd_my">
                     <div class="msg_hsd_my">
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `
@@ -132,7 +132,7 @@ let addMessage = (data) =>{
                         <div class="msg_name_o">
                             <p>${user == undefined? 'Usuario Eliminado':`${user.name} ${user.lastName}`}</p>
                         </div>
-                        <p>${messages[i].message}</p>
+                        <p>${messages[i].message.replace(/\n/g,'<br>')}</p>
                     </div>
                 </div>
             `

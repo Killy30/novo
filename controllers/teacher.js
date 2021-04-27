@@ -75,13 +75,29 @@ ctlr.viewTask = async(req, res) =>{
     const task = await Task.findOne({_id:req.params.id})
     const groupe = await Groupe.findOne({_id: task.groupe})
     const user = req.user;
+    const taskView = await ListTask.findOne({userSubmittedTasks: user._id})
+
 
     res.render('./profesor/pages/viewTask', {
         task,
         groupe,
-        user
+        user,
     })
 }
+ctlr.detailsTask = async(req, res) =>{
+    const taskView = await ListTask.findById({_id: req.params.id}).populate('userSubmittedTasks')
+    res.json({taskView})
+}
+ctlr.post_status_ratings = async(req, res) =>{
+    const taskView = await ListTask.findById({_id: req.params.id})
+    
+    const data = req.body
+    taskView.status = data.status
+    taskView.ratings = data.ratings
+    await taskView.save()
+    res.json({taskView})
+}
+
 ctlr.viewProfileStudent = async(req, res) =>{
     const user = await User.findOne({_id: req.params.id}).populate('groupes')
     const teacher = await User.findOne({_id: req.user._id}).populate('groupes')
