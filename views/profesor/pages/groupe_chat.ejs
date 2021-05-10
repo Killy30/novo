@@ -14,12 +14,14 @@
     <%}%>
 
     <%-include("../boxStudenst")%>
+
+    <%if(groupe.teacher == user.id){%>
+        <%-include("../headerGroupe")%>
+    <%}else{%>
+        <%-include('../../estudiante/headerGroup_e')%>
+    <%}%>
     <div class="contain">
-        <%if(groupe.teacher == user.id){%>
-            <%-include("../headerGroupe")%>
-        <%}else{%>
-            <%-include('../../estudiante/headerGroup_e')%>
-        <%}%>
+        
 
         <div class="box_chat" id="box_chat" data-idg="<%=groupe.id%>"  data-id="<%=groupe.teacher%>" >
             <div class="box_message">

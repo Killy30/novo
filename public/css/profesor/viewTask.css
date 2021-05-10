@@ -5,12 +5,12 @@ body{
     flex-wrap: wrap;
 }
 .contain{
-    width: 70%;
+    width: 80%;
     /* margin-top: 60px; */
 }
 .task_contain{
     width: 100%;
-    margin: 30px 0 50px 0;
+    margin: 60px 0 50px 0;
     /* background-color: #ffffff;
     -webkit-box-shadow: 1px 10px 40px 2px rgba(0, 0, 0, 0.335);
     -moz-box-shadow: 1px 10px 40px 2px rgba(0,0,0,0.335);
@@ -21,36 +21,27 @@ body{
     background-color: #ffffff;
     width: 100%;
     border-radius: 10px;
-    padding: 20px;
-    -webkit-box-shadow: 0px 0px 14px -8px #000000; 
-    box-shadow: 0px 0px 14px -8px #000000; 
+    
 }
 
 .task_file{
-    display: flex;
+   
 }
 .boxFile{
-    width: 130px;
-    height: 150px;
-    margin: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 1px solid  rgb(230, 230, 230);
-
+   display: flex;
 }
 .file{
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 }
 .file img{
     width: 100%;
+    /* margin-right: 10px; */
 }
 .file_name{
-    width: 100%;
-    background-color: rgb(230, 230, 230);
     display: flex;
     align-items: center;
+    margin-left: 10px;
 }
 .file_name p{
     margin: 0;
@@ -76,7 +67,7 @@ body{
 
 #show_taskSent{
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .boxOne{

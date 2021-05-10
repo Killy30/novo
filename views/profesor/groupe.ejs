@@ -15,25 +15,26 @@
 
     <%-include("./boxStudenst")%>
 
+    <%if(groupe.teacher == user.id){%>
+        <%include headerGroupe%>
+    <%}else{%>
+        <%-include('../estudiante/headerGroup_e')%>
+    <%}%>   
     <div class="contain">
-        <%if(groupe.teacher == user.id){%>
-            <%include headerGroupe%>
-        <%}else{%>
-            <%-include('../estudiante/headerGroup_e')%>
-        <%}%>
-    
+        
         <div class="box_two">
             <div class="info_groupe">
                 <div class="info">
                     <div class="name_groupe">
                         <p><%=groupe.name%> <%=groupe.nivel%></p>
+                        <div class="btn_create_task">
+                            <a href="" id="btn_open">Crear tarea</a>
+                        </div>
                     </div>
                     <div class="descrip_groupe">
                         <p><%=groupe.description %></p>
                     </div>
-                    <div class="li">
-                        <a href="" id="btn_open">Crear tarea</a>
-                    </div>
+                   
                 </div>
             </div>
             
@@ -45,6 +46,7 @@
             </div>
         </div>
     </div>
+    
     
     <%include overlay_task%>
     <script src="../../js/groupe.js"></script>
