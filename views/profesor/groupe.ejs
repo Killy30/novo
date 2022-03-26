@@ -27,9 +27,7 @@
                 <div class="info">
                     <div class="name_groupe">
                         <p><%=groupe.name%> <%=groupe.nivel%></p>
-                        <div class="btn_create_task">
-                            <a href="" id="btn_open">Crear tarea</a>
-                        </div>
+                       
                     </div>
                     <div class="descrip_groupe">
                         <p><%=groupe.description %></p>
@@ -39,18 +37,47 @@
             </div>
             
             <div class="contain_task">
-                <div class="box_task_info">
+                <div class="boxCreate">
+                    <div class="viewSelect">
+                        <select name="" id="selectView">
+                            <option value="all">Todas</option>
+                            <option value="today">Hoy</option>
+                            <option value="unlimit">Rutinario</option>
+                            <option value="limit">Fecha de entrega</option>
+                            <option value="expired">Fecha expirada</option>
+                        </select>
+                    </div>
                     <strong>Tareas: <%=groupe.tasks.length%></strong>
+                    <%if(groupe.teacher == user.id){%>
+                        <div class="btn_create_task">
+                            <a href="" id="btn_open">+ Crear tarea</a>
+                        </div>
+                    <%}%>
                 </div>
-                <div class="box_groupe" id="body_groupe"></div>
+                <div class="box_task_info">
+                    <!-- <strong>Tareas: <%=groupe.tasks.length%></strong> -->
+                    <div class="taskTitle">
+                        <p>Titulo</p>
+                    </div>
+                    <div class="taskTime">
+                        <p>Fecha de entrega</p>
+                    </div>
+                    <div class="taskPuntuacion">
+                        <p>Puntuacion</p>
+                    </div>
+                </div>
+                <div class="box_groupe" id="body_groupe">
+                    <div class="stat" id="stat"></div>
+                    <div class="routine" id="routine"></div>
+                </div>
             </div>
         </div>
     </div>
     
     
     <%include overlay_task%>
-    <script src="../../js/groupe.js"></script>
-    <script src="../../js/boxStudents.js"></script>
+    <script type="module" src="../../js/groupe.js"></script>
+    <script type="module" src="../../js/boxStudents.js"></script>
     <script src="../../js/headerGroupe.js"></script>
 </body>
 </html>

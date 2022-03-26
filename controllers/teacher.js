@@ -192,13 +192,17 @@ ctlr.create_task_p =  async (req, res, next) =>{
             const newTask = new Task()
 
             if(req.files.length <= 0){
+                newTask.title = req.body.title
                 newTask.description = req.body.description
                 newTask.limitTime = req.body.limit_time
                 newTask.groupe = groupe
+                console.log(req.body.title);
             }else{
+                newTask.title = req.body.title
                 newTask.description = req.body.description
                 newTask.limitTime = req.body.limit_time
                 newTask.groupe = groupe
+                console.log(req.body.title);
                 req.files.forEach(element => {
                     let file = {
                         file:'/upload/'+element.filename,

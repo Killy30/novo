@@ -4,22 +4,18 @@ const admin = document.querySelector('#admin')
 const id = _users_contain.dataset.idg
 const id_ = _users_contain.dataset.id
 
+import DataRequest from './DataRequest.js';
+
 // const sizeHeight = ()=>{
 //     let h = innerHeight;
 //     document.querySelector('.box_menbers').style.height = h+'px'
 // }
 // sizeHeight()
 
-
-let getData = async() =>{
-    let req = await fetch('/room/'+id)
-    let res = await req.json()
-    return res
-
-}
-
 let addUserOfGroupe = async() =>{
-    let room = await getData()
+    // let room = await getData()
+    let room = await DataRequest(`/room/${id}`)
+
     
     for (let i = 0; i < room.users.length; i++) {
         if(room.users[i]._id == id_){

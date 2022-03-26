@@ -6,12 +6,12 @@ body{
     flex-wrap: wrap;
 }
 .contain{
-    /* margin-top: 40px; */
+    margin-top: 90px;
     width: 70%;
 
 }
 .heade_solic{
-    padding-top: 20px;
+    margin-top: 40px;
     /* border-bottom: 1px solid #cccc; */
 
 }

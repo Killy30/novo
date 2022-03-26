@@ -1,5 +1,5 @@
 import Prueba from './Prueba.js'
-import data from "./data.js"
+// import data from "./data.js"
 
 const body_alarm = document.getElementById('body_recor')
 const btn_open = document.getElementById('btn_open')
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const prueba = new Prueba()
     prueba.verPrueba()
-    data()
+ 
 })
 
 btn_open.addEventListener('click', (e)=>{

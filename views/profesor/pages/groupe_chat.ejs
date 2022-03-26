@@ -9,44 +9,47 @@
 <body>
     <%if(groupe.teacher == user.id){%>
         <%-include('../header_p')%>
-    <%}else{%>
-        <%-include('../../estudiante/header_e')%>
-    <%}%>
-
-    <%-include("../boxStudenst")%>
-
-    <%if(groupe.teacher == user.id){%>
         <%-include("../headerGroupe")%>
     <%}else{%>
+        <%-include('../../estudiante/header_e')%>
         <%-include('../../estudiante/headerGroup_e')%>
     <%}%>
-    <div class="contain">
-        
 
+   
+    <div class="contain">
         <div class="box_chat" id="box_chat" data-idg="<%=groupe.id%>"  data-id="<%=groupe.teacher%>" >
             <div class="box_message">
                 <div class="message">
                     <div class="msg_header">
                         <p><%=groupe.name%> <%=groupe.nivel%></p>
                     </div>
+                    
                     <div class="show_message" data-id="<%=user.id%>" id="show_message"></div>
                 </div>
                 <div class="fooder">
+                    <div class="preView-img" id="preView-img"></div>
                     <form id="form_chat" action="">
-                        <textarea name="" id="text" cols="30"  rows="10"></textarea>
+                        <div class="box_tools_tx">
+                            <textarea id="text" cols="30"  rows="10" placeholder="Escribe un "></textarea>
+                            <input type="file" name="filesChat" id="files" class="file_img">
+                            <label for="files">
+                                <span class="material-icons-outlined">photo</span>
+                            </label>
+                        </div>
                         <button type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
+            <div class="configChat">
+                <div class="teacher_name"></div>
+                <div class="show_student_connect" id=""></div>
+            </div>
         </div>
     </div>
 
-    <%if(groupe.teacher == user.id){%>
-        <%-include("../overlay_task")%>
-    <%}%>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="../../../js/chat.js"></script>
-    <script src="../../js/boxStudents.js"></script>
+    <script src="../../../js/showImg.js"></script>
+    <script type="module" src="../../../js/chat.js"></script>
     <script src="../../../js/headerGroupe.js"></script>
 </body>
 </html>

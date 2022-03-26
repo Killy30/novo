@@ -1,21 +1,18 @@
 const boxSolicitud = document.getElementById('boxSolicitud')
 const _gpId = boxSolicitud.dataset._id_g
 
+import DataRequest from './DataRequest.js';
+
 document,addEventListener('DOMContentLoaded', () =>{
     ui.addUi()
 })
 
-class GetData{
-    async getGroupe(){
-        let req = await fetch('/groupe_id/'+_gpId)
-        let res = await req.json()
-        return res
-    }
-}
 
 class Ui{
     async addUi(){
-        let groupe = await getdata.getGroupe()
+        // let groupe = await getdata.getGroupe()
+        let groupe = await DataRequest(`/groupe_id/${_gpId}`)
+
         let users = groupe.solicitud 
         console.log(groupe);
         boxSolicitud.innerHTML = ''

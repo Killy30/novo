@@ -19,12 +19,15 @@
             <div class="card_body" >
                 <div class="" id="tab_panel_one">
                     <form class="form-groupe" action="/create_task/<%=groupe.id%>" method="post" enctype="multipart/form-data">
+                        <div class="form-groupe mb-2">
+                            <input type="text" name="title" class="form-control" required placeholder="Titulo">
+                        </div>
                         <div class="custom-file form-groupe">
                             <label for="file" class="custom-file-label">Subir archivo</label>
                             <input type="file" name="file" class="custom-file-input" id="" multiple>
                         </div>
                         <div class="form-groupe mt-2">
-                            <textarea name="description" class="form-control" rows="5" required placeholder="Instrucciones"></textarea>
+                            <textarea name="description" class="form-control" rows="5" required placeholder="Descripcion"></textarea>
                         </div>
                         <div class="form-groupe mt-3">
                             <button class="btn btn-outline-dark" id="btn_cancel">Cancelar</button>
@@ -35,12 +38,15 @@
                 
                 <div class="tab_panel_two" id="tab_panel_two" style="display: none;">
                     <form class="form-groupe" action="/create_task/<%=groupe.id%>" method="post" enctype="multipart/form-data">
+                        <div class="form-groupe mb-2">
+                            <input type="text" name="title" class="form-control" required placeholder="Titulo">
+                        </div>
                         <div class="custom-file">
                             <label class="custom-file-label" for="file">Subir archivo</label>
                             <input type="file" name="file" class="custom-file-input" id="" multiple>
                         </div>
                         <div class="form-groupe mt-2">
-                            <textarea name="description" required class="form-control" id="" rows="4" placeholder="Instrucciones"></textarea>
+                            <textarea name="description" required class="form-control" id="" rows="3" placeholder="Descripciones"></textarea>
                         </div>
                         <div class="form-groupe mt-2">
                             <input type="datetime-local" name="limit_time" required class="form-control"  id="">

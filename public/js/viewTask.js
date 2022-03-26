@@ -1,4 +1,4 @@
-import DataRequest from './data.js'
+import DataRequest from './DataRequest.js'
 
 const description = document.getElementById('description')
 const listTaskSubmitted = document.getElementById('show_taskSent')
@@ -35,27 +35,26 @@ const getListTask = async()=>{
 
 const addTask = async()=>{
     const task_files = document.getElementById('task_files')
-    const dataRequest = new DataRequest()
-    let ddata = dataRequest.getTask('',"/get-task/",id)
-    
-    // let hy = await ddata.json()
-    // console.log(ddata);
-    // console.log(hy);
+   
+    // let task = DataRequest(`/get-task/${id}`)
 
     let task = await getTask()
 
-    console.log(task.listTaskSubmitted);
+    // console.log(task.listTaskSubmitted);
          
     description.innerHTML += `
-    <p>
-        ${task.description.replace(/\n/g,'<br>')}
-    </p>`
+    <div class="box_t_d">
+        <p class="btitle">${task.title}</p>
+        <p>
+            ${task.description.replace(/\n/g,'<br>')}
+        </p>
+    </div>`
 
     for(let i = 0; i < task.files.length; i++ ){
         task_files.innerHTML += `
         <div class="boxFile">
             <div class="file">
-                <img src="../img/logo_files.png" alt="">
+                <img src="../img/img_file_png.png" alt="">
             </div>
             <div class="file_name">
                 <p>${task.files[i].nameFile}</p>
@@ -92,7 +91,6 @@ const addListTask = async()=>{
         
         listTaskSubmitted.innerHTML += `
         <a href="" class="boxOne seleccionar" data-idtask="${tasksList[i]._id}">
-            <div class="barra seleccionar" ${tasksList[i].status === false ?'style="background-color: red"': 'style="background-color: rgb(0, 212, 18)"'} data-idtask="${tasksList[i]._id}"></div>
             <div class="boxct seleccionar" data-idtask="${tasksList[i]._id}" >
                 <div class="name seleccionar" data-idtask="${tasksList[i]._id}">
                     <p class="fullName seleccionar" data-idtask="${tasksList[i]._id}">
@@ -112,14 +110,14 @@ const addListTask = async()=>{
                     <div class="pending seleccionar" ${tasksList[i].status === false ?'style="color: red"': 'style="color: rgb(0, 212, 18)"'} data-idtask="${tasksList[i]._id}" data-idtask="${tasksList[i]._id}">
                         ${
                             tasksList[i].status === false ? 'Pendiente':'Revisado'
-                        
                         }
                     </div>
                     <div class="seleccionar" data-idtask="${tasksList[i]._id}">
                         <strong class="seleccionar"data-idtask="${tasksList[i]._id}">
                             ${
                                 tasksList[i].ratings===0?'00':tasksList[i].ratings
-                            }
+                            }/20
+                           
                         </strong>
                     </div>
                 </div>

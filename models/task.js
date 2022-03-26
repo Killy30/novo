@@ -2,6 +2,7 @@ const {Schema, model} = require('mongoose')
 
 const newTask = new Schema({
     
+    title:        {type: String},
     description:  {type: String},
     limitTime:    {type: Date},
     timesAgo:     {type: Date, default: Date.now},

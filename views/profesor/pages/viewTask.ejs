@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../css/profesor/viewTask.css">
-    <title>Tarea</title>
+    <title>Tarea/<%=task.title%></title>
 </head>
 <body>
     <%if(groupe.teacher == user.id){%>
@@ -26,7 +26,17 @@
                 <div class="task_file" id="task_files"></div>
             </div>
             <%if(groupe.teacher == user.id){%>
-                <div id="show_taskSent"></div>
+                <div class="box_main">
+                    <div class="box_header_main">
+                        <p>Nombre</p>
+                        <p>Alchivos</p>
+                        <p>Estatus</p>
+                        <p>Puntuacion</p>
+                    </div>
+                    <div class="box_body_main">
+                        <div id="show_taskSent"></div>
+                    </div>
+                </div>
             <%}else{%>
                 <div class="overlay_sentTask"></div>
                 <a id="btn_openForm" href="">Subir Tarea</a>

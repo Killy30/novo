@@ -11,6 +11,7 @@
     
     padding-bottom: 15px;
     box-sizing: border-box;
+    /* border-right: 1px solid #ccc; */
 }
 .box_contain_users{
     width: 90%;

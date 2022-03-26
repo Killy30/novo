@@ -1,83 +1,126 @@
 
 const _idG = overlay.dataset.id
 const body_groupe = document.getElementById('body_groupe')
+const selectView = document.getElementById('selectView')
 
 
-class GetData{
-    async getTasks(){
-        let req = await fetch('/get-tasks/'+_idG)
-        let res = await req.json()
-        return res
-    }
-}
 
+import countTimeEnd from "./countTimeEnd.js"
+import DateFormate from "./DateFormat.js"
+import DataRequest from "./DataRequest.js"
+
+document.addEventListener('DOMContentLoaded', async() => {
+    let tasks = await DataRequest(`/get-tasks/${_idG}`)
+    ui.addTask(tasks)
+ 
+})
+
+ 
 class Ui{
-    async addTask(){
-        const tasks = await getdata.getTasks()
-        console.log(tasks);
-        for(let i = tasks.length - 1;i >= 0; i--){
-            let time = new Date(tasks[i].timesAgo)
-            // let b = tasks[i].description.split('\n')
-            // let a = tasks[i].description.charAt()
-            // let c = tasks[i].description.length
+    async addTask(allTasks){
+        let stat = document.getElementById('stat')
+        let routine = document.getElementById('routine')
 
-            // let h = tasks[i].description.match(/([A-Z]*[0-9])/gi)
-            // <div class="box_btn">
-            //     <a href="/task/${tasks[i]._id}">Ver tarea</a>
-            // </div>
+        stat.innerHTML = ''
+        routine.innerHTML = ''
 
-            body_groupe.innerHTML +=`
-                <a class="box_task"  href="/task/${tasks[i]._id}">
-                    <div class="box_time_task">
-                        <div></div>
-                        
+        let tasksRoutine = allTasks.filter(task =>{
+            let limit_time = new Date(task.limitTime)
+            return limit_time == 'Invalid Date'
+        })
+
+        let tasksStat = allTasks.filter(task =>{
+            let limit_time = new Date(task.limitTime)
+            return limit_time.getTime() > Date.now()
+        })
+        
+        let eachTask = (task) =>{
+            let time = new Date(task.timesAgo)
+
+            let limit_time = new Date(task.limitTime)
+            let t = limit_time.getTime()
+            let a = Date.now()
+
+            routine.innerHTML +=`
+                <a class="box_task"  href="/task/${task._id}">
+                    <div class="box_descp">
+                        <p class="taskTitle">${task.title ? task.title : "Titulo"}</p>
+                        <p>${task.description.substring(0,60)+'...'}</p>
+                    </div>
+                    <div class="box_time_task">        
                         <div class="box_timeAgo">
-                            <div>
-                                <samp>${fecha(time.getTime())}<samp>/<samp>${time.getDate()}<samp>/<samp>${time.getFullYear()}<samp>
+                            <div>${limit_time=='Invalid Date'? `<p style="color: rgb(0, 190, 10);"> Rutinario <p>`
+                                    :DateFormate(limit_time.getTime())+'/'+limit_time.getDate()+'/'+limit_time.getFullYear()
+                                }   
                             </div>
                             <div class="hs">
-                                <samp>${time.getHours()}<samp>:<samp>${time.getMinutes()}<samp>
+                                <p>${limit_time=='Invalid Date'? ''
+                                    :time.getHours()+':'+time.getMinutes()
+                                }<p>
                             </div>
                         </div>
                     </div>
-                    <div class="box_descp">
-                        <p>${tasks[i].description}</p>
-                    </div>
-                    <div class="box_files_">
-                        <div class="box_file">
-                            <img src="../img/logo_files.png" alt="">
-                        </div>
-                        <div class="box_count_files">
-                            <p>${tasks[i].files.length} Archivo</p>
-                        </div>
-                    </div>
-                    
+                    <div class="puntuacion_box">
+                        <strong>10</strong>
+                    </div> 
                 </a>
             `
         }
+        
+        for(let i = tasksStat.length - 1;i >= 0; i--){
+            eachTask(tasksStat[i])
+        }
+
+        for(let i = tasksRoutine.length - 1;i >= 0; i--){
+            eachTask(tasksRoutine[i])
+        }
+        
     }
 }
 
-const getdata = new GetData()
-const ui = new Ui()
-ui.addTask()
 
 
-function fecha(date){
-    var d = new Date(date);
+selectView.addEventListener('change', async(e)=>{
+
+    let tasks = await DataRequest(`/get-tasks/${_idG}`)
+ 
+    if(e.target.value === 'all'){
+        
+        ui.addTask(tasks)
+    }else if(e.target.value === 'today'){
+        let today_tasks = tasks.filter(task =>{
+            let createDate = new Date(task.timesAgo)
+            let todayDate = Date.now()
+            let todayDateConfig = new Date(todayDate)
+            return createDate.getDate() == todayDateConfig.getDate()
+        })
+        ui.addTask(today_tasks)
+    }else if(e.target.value === 'limit'){
+        let limit_tasks = tasks.filter(task =>{
+            let limit_time = new Date(task.limitTime)
+            return task.limitTime !== undefined 
+        })
+        ui.addTask(limit_tasks)
+    }else if(e.target.value === 'unlimit'){
+        let unlimit_tasks = tasks.filter(task =>{
+            return task.limitTime == undefined
+        })
+        ui.addTask(unlimit_tasks)
+    }else if(e.target.value === 'expired'){
+        let expired_tasks = tasks.filter(task =>{
+            if(task.limitTime !== undefined){
+                let limit_time = new Date(task.limitTime)
+                return limit_time.getTime() < Date.now()
+            }
+        })
+        ui.addTask(expired_tasks)
+    }
+
     
-    var month = new Array();
-    month[0] = "Enero";
-    month[1] = "Febrero";
-    month[2] = "Marzo";
-    month[3] = "Abril";
-    month[4] = "Mayo";
-    month[5] = "Junio";
-    month[6] = "Julio";
-    month[7] = "Agosto";
-    month[8] = "Septiembre";
-    month[9] = "Octubre";
-    month[10] = "Noviembre";
-    month[11] = "Diciembre";
-    return month[d.getMonth()];
-}
+})
+
+
+
+const ui = new Ui()
+
+

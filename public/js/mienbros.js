@@ -1,22 +1,15 @@
 const boxSolicitud = document.getElementById('boxSolicitud')
 const _gpId = boxSolicitud.dataset._id_g
 
+import DataRequest from './DataRequest.js';
+
 document,addEventListener('DOMContentLoaded', () =>{
     ui.addUi()
 })
 
-class GetData{
-    async getGroupe(){
-        let req = await fetch('/groupe_id/'+_gpId)
-        let res = await req.json()
-        console.log(res);
-        return res
-    }
-}
-
 class Ui{
     async addUi(){
-        let groupe = await getData.getGroupe()
+        let groupe = await DataRequest(`/groupe_id/${_gpId}`)
         let users = groupe.students 
         console.log(groupe);
         boxSolicitud.innerHTML = ''
@@ -54,7 +47,6 @@ boxSolicitud.addEventListener('click', async(e) =>{
             }
             let req = await fetch('/delete-user-groupe/'+JSON.stringify(ids))
             let res = await req.json()
-            console.log(res);
             if(res === 'succes'){
                 ui.addUi()
             }
@@ -63,5 +55,4 @@ boxSolicitud.addEventListener('click', async(e) =>{
 })
 
 
-const getData = new GetData()
 const ui = new Ui()

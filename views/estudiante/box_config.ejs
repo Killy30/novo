@@ -1,19 +1,21 @@
-<div>
-    <div class="userD">
-        <div class="fotoUser">
-            <img src="../../img/images.png" alt="">
+<div class="boxuc">
+    <div>
+        <div class="userD">
+            <div class="fotoUser">
+                <img src="../../img/images.png" alt="">
+            </div>
+            <div class="fullName">
+                <p><%=user.name%> <%=user.lastName%></p> 
+            </div>
         </div>
-        <div class="fullName">
-            <p><%=user.name%> <%=user.lastName%></p> 
+    
+        <div class="config">
+            <p><a href="/emails">Mail</a></p>
+            <p><a href="/notas">Notas</a></p>
+            <p><a href="/calendarios">Calendario</a></p>
+            <p><a href="/recordatorio/<%=user.id%>">Recordatario</a></p>
+            <p><a href="/configuracion">Configuracion</a></p>
         </div>
-    </div>
-
-    <div class="config">
-        <p><a href="/emails">Mail</a></p>
-        <p><a href="/notas">Notas</a></p>
-        <p><a href="/calendarios">Calendario</a></p>
-        <p><a href="/recordatorio/<%=user.id%>">Recordatario</a></p>
-        <p><a href="/configuracion">Configuracion</a></p>
     </div>
 
 </div>

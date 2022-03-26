@@ -4,6 +4,7 @@ const roomSchema = new Schema({
     messages: [{
         myId: String,
         message: String,
+        file: String,
         dateMsg: {type: Date, default: Date.now}
     }],
     users: [{type: Schema.Types.ObjectId, ref: 'user'}],

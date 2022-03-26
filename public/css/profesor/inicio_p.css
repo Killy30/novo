@@ -41,15 +41,12 @@ body{
 .list{
     width: 100%;
     margin-top: 10px;
-    padding-top: 15px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     
 }
 .titulo{
     width: 100%;
-    border-bottom: 1px solid #020518;
+    border-bottom: 1px solid #dddddd;
     margin-bottom: 15px;
     font-size: 18px;
     padding-bottom: 5px;
@@ -134,8 +131,8 @@ body{
 .boxuc{
     height: 89%;
     width: 100%;
-    background-color: rgb(255, 255, 255);
     margin-bottom: 100px;
+    border-right: 1px solid #dddd;
     /* background-color: rgb(255, 255, 255);
     -webkit-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
     -moz-box-shadow: 1px 6px 20px -2px rgba(0,0,0,0.16);
@@ -148,8 +145,8 @@ body{
     background-color: #ffffff;
     padding: 25px 10px;
     box-sizing: border-box;
-    border-radius: 3px;
-     
+    border-bottom: 1px solid #dddd;
+    margin-bottom: 20px;
 }
 .fotoUser{
     width: 110px;
@@ -208,10 +205,33 @@ body{
     font-size: 18px;
 }
 
+.create-groupe{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.create-groupe a{
+    color: rgb(0, 119, 230);
+    font-family: sans-serif;
+    font-size: 17px;
+   
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 119, 230);
+    border-radius: 50px;
+}
+.create-groupe a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 119, 230);
+    transition: 0.5s;
+}
+
 .config{
     width: 100%;
     background-color: #ffffff;
-    border-top: 20px solid #e8e8e8;
     padding: 5px 0;
   
 }

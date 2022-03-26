@@ -1,12 +1,13 @@
 
 *{
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body{
-    background-color: #ffffff;
     font-family: sans-serif;
+    /* background-color: rgb(240, 239, 239); */
 }
 header{
     height: 55px;
@@ -15,7 +16,7 @@ header{
     position: fixed;
     justify-content: space-between;
     align-items: flex-end;
-    background-color: #051228;
+    background-color: #031738;
     z-index: 1;
 }
 .box_logo{

@@ -1,5 +1,5 @@
 :root{
-    --color_bara: #3a3a3a;
+    --color_bara: rgba(196, 196, 196, 0.933);
     --color_fooderTask: #0D5EDE
 }
 
@@ -23,23 +23,36 @@ body{
 
 .box_two{
     width: 100%;
+    margin-top: 60px;
+    
+}
+
+.boxCreate{
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .box_task_info{
     width: 100%;
-    /* border-top: 1px solid var(--color_bara); */
-    border-bottom: 1px solid var(--color_bara);
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(196, 196, 196, 0.933);
+    border-bottom: 1px solid rgba(196, 196, 196, 0.933);
     margin-bottom: 15px;
     padding: 7px 0 7px 0;
 }
-.box_task_info strong{
+.box_task_info p{
    font-size: large;
+   font-weight: bolder;
+   margin: 0;
 }
 
 /* info groupe */
 .info_groupe{
     width: 100%;
-    margin: 50px 0 15px 0;
+    margin: 50px 0 50px 0;
     display: flex;
     box-sizing: border-box;
     padding-top: 15px;
@@ -92,6 +105,16 @@ body{
 }
 
 
+.taskTitle{
+    width: 60%;
+}
+.taskTime{
+    width: 25%;
+}
+.taskPuntuacion{
+    width: 15%;
+}
+
 /* tasks */
 .contain_task{
     width: 100%;
@@ -107,22 +130,28 @@ body{
 .box_task{
     width: 100%;
     height: 90px;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
     border-radius: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     color: rgb(54, 54, 54);
     box-sizing: border-box;
-    -webkit-box-shadow: 0px 0px 14px -8px #000000; 
-    box-shadow: 0px 0px 14px -8px #000000;  
+    /* -webkit-box-shadow: 0px 0px 14px -8px #000000; 
+    box-shadow: 0px 0px 14px -8px #000000;   */
     text-decoration: none;
 }
 .box_task:hover{
     text-decoration: none;
+    background-color: rgba(233, 233, 233, 0.933);
+
+}
+.taskTitle{
+    font-weight: bolder;
+    color: rgb(37, 37, 37);
 }
 .box_time_task{
-    width: 100%;
+    width: 25%;
     height: 15%;
     display: flex;
     justify-content: space-between;
@@ -131,13 +160,15 @@ body{
 .box_timeAgo{
     display: flex;
     color: rgb(54, 54, 54);
+    color: #ff4343;
+    font-weight: bolder;
 }
 .box_timeAgo .hs{
     margin-left: 7px;
 }
 .box_descp{
-    width: 100%;
-    max-height: 45%;
+    width: 60%;
+    max-height: 60%;
     overflow: hidden;
     padding: 10px;
     box-sizing: border-box;
@@ -145,30 +176,11 @@ body{
 .box_descp p{
     margin: 0;
 }
-.box_files_{
-    width: 100%;
-    height: 30%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    background: var(--color_fooderTask);
-    border-bottom-left-radius:10px ;
-    border-bottom-right-radius:10px ;
-    color: white;
+
+.puntuacion_box{
+    width: 15%;
 }
-.box_file{
-    width: 50px;
-    height: 50px;
-}
-.box_file img{
-    width: 100%;
-    object-fit: cover;
-}
-.box_count_files p{
-    font-size: 20px;
-    font-weight: bolder;
-}
+
 .box_btn{
     width: 100%;
     height: 17%;

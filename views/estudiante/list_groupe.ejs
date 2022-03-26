@@ -1,18 +1,23 @@
 <head>
-    <link rel="stylesheet" href="../../../css/estudiante/list_groupe.css">
+    <link rel="stylesheet" href="../../css/estudiante/list_groupe.css">
 </head>
 
 <%groupe_.forEach(groupe =>{%>
-    <a class="a_groupe" href="/groupe-student/<%=groupe.id%>">
-        <div class="groupe" >
-            <div class="box_element">
-                <div class="name_groupe">
-                    <p><%=groupe.name%> <%=groupe.nivel%></p>
-                </div>
+    <a href="/groupe-student/<%=groupe.id%>" class="groupe" > 
+        <div class="box_element">
+            <div class="header-groupe">
+                <p class="name_groupe"><%=groupe.name%> <%=groupe.nivel%></p>
+            </div>
+            <div class="list_body">
                 <div class="description">
                     <p><%=groupe.description%></p>
                 </div>
-                <div class="fooder_groupe">
+            </div>
+            <div class="fooder-groupe">
+                <div class="teacher-name">
+                    <div class="t-img">
+                        
+                    </div>
                     <p><%=groupe.teacher.name%> <%=groupe.teacher.lastName%></p>
                 </div>
             </div>

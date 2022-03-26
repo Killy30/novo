@@ -5,23 +5,27 @@
 
 <div class="overlay" >
     <div class="overlay_detailTask">
-        <div class="close">
-            <button id="close_tab">X</button>
-        </div>
         <div class="d_header">
-            <p class="d_name">
-
-            </p>
+            <div class="close">
+                <button id="close_tab">X</button>
+            </div>
+            <p class="d_name"></p>
         </div>
         <div class="d_body">
             <form action="">
-                <input type="checkbox" name="" id="status">
-                <input type="number" name="ratings" id="ratings">
+                <div class="d_ratings">
+                    <label for="ratings">Puntuacion</label>
+                    <input type="number" name="ratings" id="ratings">
+                </div>
+                <div class="d_status">     
+                    <label for="check">Revisado</label>
+                    <input type="checkbox" name="check" id="status">
+                </div>
             </form>
             <div id="files">
 
             </div>
-            <div class="btn_dt">
+            <div class="d_btn">
 
                 <button id="btn_dt">Verificado</button>
             </div>
